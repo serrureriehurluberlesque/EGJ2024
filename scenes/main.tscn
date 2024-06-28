@@ -49,3 +49,4 @@ scale = Vector2(0.0909091, 0.125)
 
 [node name="Camera2D" type="Camera2D" parent="Center/Salle/SubViewportContainer/SubViewport"]
 offset = Vector2(176, 128)
+process_callback = 0
