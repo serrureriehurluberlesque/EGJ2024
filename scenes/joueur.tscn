@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt2brvj5wju04"]
+
+[ext_resource type="PackedScene" uid="uid://dvgtvklfyagb5" path="res://scenes/personnage.tscn" id="1_o2ysa"]
+[ext_resource type="Script" path="res://scenes/Controle.gd" id="2_2keg3"]
+
+[node name="Joueur" instance=ExtResource("1_o2ysa")]
+
+[node name="Controle" type="Node" parent="." index="1"]
+script = ExtResource("2_2keg3")
