@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvgtvklfyagb5"]
+[gd_scene load_steps=3 format=3 uid="uid://dvgtvklfyagb5"]
 
 [ext_resource type="Texture2D" uid="uid://botlqywgqddqd" path="res://assets/icon.png" id="1_iuen1"]
+[ext_resource type="Script" path="res://scenes/Controle.gd" id="2_uioe3"]
 
 [node name="Personnage" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_iuen1")
 offset = Vector2(0, -16)
+
+[node name="Controle" type="Node" parent="."]
+script = ExtResource("2_uioe3")
