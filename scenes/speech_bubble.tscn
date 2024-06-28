@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1hty1782x6mt"]
+
+[ext_resource type="Script" path="res://scenes/speech_bubble.gd" id="1_vy0su"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1f15a"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_n36xx"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="SpeechBubble" type="Label"]
+offset_left = 24.0
+offset_top = 39.0
+offset_right = 174.0
+offset_bottom = 89.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1f15a")
+text = "Bonjour
+"
+label_settings = SubResource("LabelSettings_n36xx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("1_vy0su")
+metadata/_edit_group_ = true
+
+[node name="SpeechTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="FadeOutTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="FadeInTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="timeout" from="SpeechTimer" to="." method="_on_speech_timer_timeout"]
+[connection signal="timeout" from="FadeOutTimer" to="." method="_on_fade_out_timer_timeout"]
+[connection signal="timeout" from="FadeInTimer" to="." method="_on_fade_in_timer_timeout"]

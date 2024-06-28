@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwkeifng7qeqq"]
+
+[ext_resource type="Script" path="res://scenes/SpeechBubblePOC.gd" id="1_5kr5w"]
+[ext_resource type="PackedScene" uid="uid://c1hty1782x6mt" path="res://scenes/speech_bubble.tscn" id="2_6lg5q"]
+
+[node name="SpeechBubblePOC" type="Node"]
+script = ExtResource("1_5kr5w")
+bubble_scene = ExtResource("2_6lg5q")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1908.0
+offset_bottom = 1080.0
+color = Color(0, 1, 1, 1)
+
+[node name="SpawnBubbleButton" type="Button" parent="."]
+offset_left = 1250.0
+offset_top = 450.0
+offset_right = 1527.0
+offset_bottom = 571.0
+text = "Press me button"
+
+[node name="Marker2D" type="Marker2D" parent="SpawnBubbleButton"]
+position = Vector2(1250, 450)
+
+[connection signal="speak" from="." to="." method="_on_speak"]
+[connection signal="pressed" from="SpawnBubbleButton" to="." method="_on_spawn_bubble_button_pressed"]
