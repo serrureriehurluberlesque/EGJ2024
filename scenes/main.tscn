@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://yjt2tggvmvm6"]
+[gd_scene load_steps=3 format=3 uid="uid://yjt2tggvmvm6"]
+
+[ext_resource type="Texture2D" uid="uid://botlqywgqddqd" path="res://assets/icon.png" id="1_imtky"]
+[ext_resource type="PackedScene" uid="uid://dvgtvklfyagb5" path="res://scenes/personnage.tscn" id="2_sdy7p"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(176, 128)
+scale = Vector2(11, 8)
+texture = ExtResource("1_imtky")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(176, 128)
+zoom = Vector2(4, 4)
+
+[node name="Personnage" parent="." instance=ExtResource("2_sdy7p")]
+position = Vector2(235, 209)
