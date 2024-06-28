@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b00twpjkqplwd"]
+
+[ext_resource type="Script" path="res://scenes/foule.gd" id="1_goasu"]
+[ext_resource type="Texture2D" uid="uid://botlqywgqddqd" path="res://assets/icon.png" id="2_kxrmn"]
+
+[node name="Foule" type="Node2D"]
+script = ExtResource("1_goasu")
+
+[node name="Sol" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.4)
+texture = ExtResource("2_kxrmn")
