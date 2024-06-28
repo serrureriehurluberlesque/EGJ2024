@@ -22,7 +22,7 @@ func _process(delta):
 	moving = false
 
 func animate_move():
-	$Sprite2D.texture = sprites_walk[int(t * 4) % 4]
+	$Sprite2D.texture = sprites_walk[int(t * 6) % 4]
 
 func speak():
 	# Create a new instance of the SpeechBubble scene.
