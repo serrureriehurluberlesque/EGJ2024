@@ -15,8 +15,8 @@ var joueur
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var n = PEOPLE_BEFORE_JOUEUR + 1
-	get_node("Sol").set_position(Vector2(0, 16 * n - 32))
-	get_node("Sol").set_scale(Vector2(1, n))
+	$Sol.set_position(Vector2(0, 16 * n - 32))
+	$Sol.set_scale(Vector2(1, n))
 	
 	for i in PEOPLE_BEFORE_JOUEUR:
 		var extra = preload(scene_extra).instantiate()
@@ -41,10 +41,9 @@ func _process(delta):
 			t -= t_next
 
 func next():
-	var next = extras.pop_front()
-	if not next:
-		next = joueur
+	var suivant = extras.pop_front()
+	if not suivant:
+		suivant = joueur
 		spawning = false
 	
-	next.can_move = true
-	print("Spwan !")
+	suivant.movable()
