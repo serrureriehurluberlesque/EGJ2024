@@ -6,6 +6,7 @@
 
 [node name="Extra" instance=ExtResource("1_oxx4v")]
 script = ExtResource("2_3xy85")
+sprite_name = "alien_1"
 
 [node name="IA" type="Node" parent="." index="1"]
 script = ExtResource("2_dqi8n")
