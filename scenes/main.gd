@@ -27,8 +27,11 @@ func next_level(dead=false):
 func _on_next_level_timer_timeout():
 	load_next_level()
 	
+func get_current_level():
+	return "res://scenes/level_%d.tscn" % level_number
+	
 func load_next_level():
 	if level:
 		level.free()
-	level = load("res://scenes/level_" + str(level_number) + ".tscn").instantiate()
+	level = load(get_current_level()).instantiate()
 	add_child(level)

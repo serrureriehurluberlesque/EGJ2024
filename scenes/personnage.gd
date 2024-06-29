@@ -15,6 +15,7 @@ var direction_walk = {Vector2(0, -1): "walk_back", Vector2(0, 1): "walk_front", 
 var move_target = null
 var is_employee = false
 var is_ko = false
+var turned_back = false
 
 func _ready():
 	_pre_ready()
@@ -88,7 +89,7 @@ func animate_move(d=Vector2(0, 0)):
 				$Sprite2D.flip_h = true
 			else:
 				$Sprite2D.flip_h = false
-		else:
+		elif not turned_back:
 			$Sprite2D.texture = sprites["idle"][int(t * 6) % len(sprites["idle"])]
 
 func not_movable():
@@ -102,6 +103,11 @@ func move(v, delta):
 		# set_position(get_position() + delta * SPEED * v)
 		apply_central_force(SPEED * 10 * v)
 		moving = v
+		
+		if v.y < 0:
+			turned_back = true
+		else:
+			turned_back = false
 
 func move_to(pos):
 	if pos == Vector2(0, 0):
