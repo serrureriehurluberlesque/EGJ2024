@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_speak(rep, native=false):
+func _on_speak(rep, native=false, venere=false):
 	print("blablabla")
 	var words = ""
 	
@@ -40,7 +40,9 @@ func _on_speak(rep, native=false):
 	#bubble.get_node("Text").text = POSSIBLE_SPEECH[randi() % POSSIBLE_SPEECH.size()]
 	bubble.get_node("Text").text = words
 	bubble.position = Vector2(0, - (get_node("../Sprite2D").texture.get_height() + bubble.size.y + 3))
-
+	if venere:
+		bubble.get_node("Bubble").modulate = Color(1.0, 0.0, 0.0)
+	
 	get_node("..").add_child(bubble)
 	
 	for node in $SpeakArea.get_overlapping_bodies():

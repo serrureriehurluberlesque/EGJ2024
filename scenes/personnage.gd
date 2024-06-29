@@ -15,6 +15,7 @@ var move_target = null
 var is_employee = false
 
 func _ready():
+	_pre_ready()
 	var list_sprite_names = ["taser", "idle"]
 	var unique = []
 	for d in direction_walk.values():
@@ -32,6 +33,9 @@ func _ready():
 				sprites[lsn].append(load(p))
 				
 	animate_move()
+
+func _pre_ready():
+	pass
 
 func _process(delta):
 	pass

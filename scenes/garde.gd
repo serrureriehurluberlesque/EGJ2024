@@ -3,8 +3,9 @@ extends Personnage
 var pre_tasing = false
 var tased = false
 @onready var j = get_node("../Foule/Joueur")
+
 func _pre_move():
-	if not pre_tasing and t > 10.0:
+	if not pre_tasing and t > 30.0:
 		start_pre_tase()
 	if pre_tasing and (j.get_global_position() - get_global_position()).length() < 48:
 		start_tase()
@@ -14,8 +15,11 @@ func _post_move():
 		var n = int((1.0 - $TaserTimer.time_left) * 15 / $TaserTimer.wait_time) % len(sprites["taser"])
 		$Sprite2D.texture = sprites["taser"][n]
 
+func se_venere():
+	$Speaker.speak.emit(1, true, true)
+	
 func start_pre_tase():
-	# se_venere()
+	se_venere()
 	pre_tasing = true
 	j.not_movable()
 	move_to(j.get_global_position() + Vector2(24, 0))
