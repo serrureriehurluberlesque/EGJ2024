@@ -1,7 +1,7 @@
 extends Personnage
 
 func _pre_ready():
-	var alien_id = randi() % 2 + 1
+	var alien_id = randi() % 3 + 1
 	sprite_name += "_" + str(alien_id)
 	
 	var voice_matching = {1: "KUSOJIJI", 2: "MIMOU", 3: "SATAN"}
