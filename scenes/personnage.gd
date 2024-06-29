@@ -97,6 +97,9 @@ func not_movable():
 	
 func movable():
 	can_move = true
+	
+func se_venere():
+	$Speaker.speak.emit(randi() % 3 + 1, true, true)
 
 func move(v, delta):
 	if can_move:
