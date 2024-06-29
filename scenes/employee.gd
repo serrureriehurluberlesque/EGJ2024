@@ -46,4 +46,4 @@ func _on_validation_timer_timeout():
 	get_node("../..").osekour()
 	
 func se_venere():
-	get_node("../..").osekour()
+	$Speaker.speak.emit(randi() % 3 + 1, true, true)
