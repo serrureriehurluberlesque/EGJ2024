@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1hty1782x6mt"]
+[gd_scene load_steps=8 format=3 uid="uid://c1hty1782x6mt"]
 
 [ext_resource type="FontFile" uid="uid://qeiefwcidcbp" path="res://assets/fonts/PlaywriteDEGrund-VariableFont_wght.ttf" id="1_4mpaf"]
 [ext_resource type="Script" path="res://scenes/speech_bubble.gd" id="1_vy0su"]
 [ext_resource type="Script" path="res://scenes/bubble.gd" id="2_2ce0m"]
+[ext_resource type="Shader" path="res://scenes/speech_bubble.gdshader" id="3_g5tma"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rw52j"]
+shader = ExtResource("3_g5tma")
 
 [sub_resource type="FontVariation" id="FontVariation_rp4w2"]
 base_font = ExtResource("1_4mpaf")
@@ -42,6 +46,7 @@ layout_mode = 0
 script = ExtResource("2_2ce0m")
 
 [node name="Text" type="Label" parent="."]
+material = SubResource("ShaderMaterial_rw52j")
 layout_mode = 0
 offset_left = 16.0
 offset_top = 8.0
