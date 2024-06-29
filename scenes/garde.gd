@@ -29,4 +29,7 @@ func start_tase():
 		$TaserTimer.start()
 		tased = true
 		get_node("/root/Main").next_level(true)
-		j.shade_out()
+
+
+func _on_taser_timer_timeout():
+	j.knock_out()

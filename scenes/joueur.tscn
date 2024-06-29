@@ -20,3 +20,9 @@ script = ExtResource("2_2keg3")
 [node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(1.5, -16)
 shape = SubResource("RectangleShape2D_kuqep")
+
+[node name="KnockOutTimer" type="Timer" parent="." index="5"]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="KnockOutTimer" to="." method="_on_knock_out_timer_timeout"]

@@ -5,7 +5,6 @@ func get_todos():
 	return [{"t": 1.2, "action": "move", "target": Vector2(186, 91)}]
 	
 func osekour():
-	print("OSEKOUUR")
 	$Garde.start_pre_tase()
 
 func isokpourpasser():
@@ -13,7 +12,6 @@ func isokpourpasser():
 		return true
 	else:
 		osekour()
-		print("NOT OK")
 		return false
 
 func loop_employee():

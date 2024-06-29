@@ -121,5 +121,4 @@ func is_player():
 	false
 
 func listen(source, rep):
-	if source != $Speaker:
-		print("I'm personnally listening")
+	pass
