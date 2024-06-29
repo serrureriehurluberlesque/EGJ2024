@@ -3,7 +3,7 @@ extends Node2D
 @export var PEOPLE_BEFORE_JOUEUR = 3
 
 var t = 0
-var t_next = 1.5
+@export var t_next = 3.5
 var t_avance = 0.0
 var spawning = true
 
@@ -12,9 +12,11 @@ const scene_extra = "res://scenes/extra.tscn"
 
 var extras = []
 var joueur
-
+var todos = []
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
+	todos = get_node("..").get_todos()
 	var n = PEOPLE_BEFORE_JOUEUR + 1
 	$Sol.set_position(Vector2(32 * n, -16))
 	$Sol.set_scale(Vector2(n, 1))
@@ -23,6 +25,7 @@ func _ready():
 		var extra = preload(scene_extra).instantiate()
 		extra.not_movable()
 		extra.set_position(Vector2(i * 32, 0))
+		extra.get_node("IA").give_todos(todos)
 		extras.append(extra)
 		add_child(extra)
 	

@@ -43,7 +43,8 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	t += delta
+	if can_move:
+		t += delta
 	
 	_pre_move()
 	
@@ -101,6 +102,7 @@ func move(v, delta):
 		moving = v
 
 func move_to(pos):
+	print(self.name, pos)
 	if pos == Vector2(0, 0):
 		print("Warning pos 0,0 ça va foutre la merde")
 	move_target = pos

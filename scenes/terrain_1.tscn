@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlwu5mqja6113"]
+[gd_scene load_steps=8 format=3 uid="uid://dlwu5mqja6113"]
 
 [ext_resource type="PackedScene" uid="uid://diar0tgb5r0j5" path="res://scenes/terrain.tscn" id="1_757ke"]
+[ext_resource type="Script" path="res://scenes/terrain_1.gd" id="2_02hv0"]
 [ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="2_isnmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qduv6"]
@@ -16,6 +17,7 @@ size = Vector2(56, 253)
 size = Vector2(465.5, 36)
 
 [node name="Terrain" instance=ExtResource("1_757ke")]
+script = ExtResource("2_02hv0")
 
 [node name="Employee" parent="." index="4" instance=ExtResource("2_isnmc")]
 position = Vector2(60, -16)
@@ -56,3 +58,6 @@ collision_layer = 8
 [node name="BorderBottomShape" type="CollisionShape2D" parent="BorderBottom" index="0"]
 position = Vector2(-0.75, 146)
 shape = SubResource("RectangleShape2D_pafm2")
+
+[node name="Node2D" type="Node2D" parent="." index="10"]
+position = Vector2(17, -3)
