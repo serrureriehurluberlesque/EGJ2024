@@ -2,6 +2,8 @@ extends Control
 
 var level
 
+var level_number = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_next_level()
@@ -18,6 +20,7 @@ func next_level(dead=false):
 		$DoorSound.play()
 
 func _on_door_sound_finished():
+	level_number += 1
 	load_next_level()
 
 func _on_death_sound_finished():
@@ -26,7 +29,7 @@ func _on_death_sound_finished():
 func load_next_level():
 	if level:
 		level.free()
-	level = preload("res://scenes/level.tscn").instantiate()
+	level = load("res://scenes/level_" + str(level_number) + ".tscn").instantiate()
 	add_child(level)
 
 

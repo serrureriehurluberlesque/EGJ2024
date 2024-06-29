@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu8vj58r7hw3a"]
+
+[ext_resource type="PackedScene" uid="uid://c23bpyvvlxhsx" path="res://scenes/level.tscn" id="1_gur8b"]
+[ext_resource type="Texture2D" uid="uid://csfo0511i0k02" path="res://assets/Tableau2.png" id="2_s7k85"]
+[ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="3_exnod"]
+
+[node name="Level2" instance=ExtResource("1_gur8b")]
+
+[node name="Terrain" parent="Center/Salle/SubViewportContainer/SubViewport" index="0"]
+texture = ExtResource("2_s7k85")
+
+[node name="Foule" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="0"]
+position = Vector2(32, 104)
+
+[node name="Garde" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="1"]
+position = Vector2(-146, -20)
+
+[node name="Employee" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="2" instance=ExtResource("3_exnod")]
+position = Vector2(64, -50)
+
+[node name="Employee2" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="3" instance=ExtResource("3_exnod")]
+position = Vector2(0, -50)
+
+[node name="Employee3" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="4" instance=ExtResource("3_exnod")]
+position = Vector2(-64, -50)
+
+[node name="Employee4" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="5" instance=ExtResource("3_exnod")]
+position = Vector2(-90, 80)
+
+[node name="Porte" parent="Center/Salle/SubViewportContainer/SubViewport" index="2"]
+position = Vector2(46, 26)

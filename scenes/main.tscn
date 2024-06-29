@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://yjt2tggvmvm6"]
+[gd_scene load_steps=4 format=3 uid="uid://yjt2tggvmvm6"]
 
-[ext_resource type="PackedScene" uid="uid://c23bpyvvlxhsx" path="res://scenes/level.tscn" id="1_vq7i4"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_w67ax"]
 [ext_resource type="AudioStream" uid="uid://dxxqjy525srmf" path="res://assets/door.wav" id="2_r4bks"]
 [ext_resource type="AudioStream" uid="uid://cjo1venyri0qk" path="res://assets/music.ogg" id="4_8kkst"]
@@ -13,9 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w67ax")
-
-[node name="Level" parent="." instance=ExtResource("1_vq7i4")]
-layout_mode = 1
 
 [node name="DoorSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_r4bks")

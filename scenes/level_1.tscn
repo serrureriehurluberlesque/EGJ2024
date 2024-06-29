@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbeiecykonaym"]
+
+[ext_resource type="PackedScene" uid="uid://c23bpyvvlxhsx" path="res://scenes/level.tscn" id="1_l3od6"]
+[ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="2_h0s2l"]
+
+[node name="Level1" instance=ExtResource("1_l3od6")]
+
+[node name="Employee" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="2" instance=ExtResource("2_h0s2l")]
+position = Vector2(60, -16)
