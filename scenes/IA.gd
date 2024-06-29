@@ -1,4 +1,5 @@
 extends Node
 
-func _process(delta):
-	get_node("..").move(Vector2(1, 0), delta)
+func _ready():
+	var target = Vector2(186, 91)
+	get_node("..").move_to(target)

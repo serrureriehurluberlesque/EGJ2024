@@ -10,6 +10,7 @@ var t = 0
 var moving = false
 var sprites_walk = {Vector2(0, -1): [], Vector2(0, 1): [], Vector2(-1, 0): [], Vector2(1, 0): []}
 var sprites_idle = []
+var move_target = null
 
 func _ready():
 	sprites_idle.append(load("res://assets/" + sprite_name + "_idle.png"))
@@ -24,6 +25,19 @@ func _ready():
 
 func _process(delta):
 	t += delta
+	if move_target:
+		var dpos = move_target - get_global_position()
+		
+		if dpos.x > SPEED * delta:
+			move(Vector2(1, 0), delta)
+		if dpos.x < -1 * SPEED * delta:
+			move(Vector2(-1, 0), delta)
+		if dpos.y > SPEED * delta:
+			move(Vector2(0, 1), delta)
+		if dpos.y < -1 * SPEED * delta:
+			move(Vector2(0, -1), delta)
+		if can_move and not moving:
+			move_target = null
 	if not moving:
 		animate_move()
 	else:
@@ -48,3 +62,8 @@ func move(v, delta):
 	if can_move:
 		set_position(get_position() + delta * SPEED * v)
 		moving = v
+
+func move_to(pos):
+	if pos == Vector2(0, 0):
+		print("Warning pos 0,0 ça va foutre la merde")
+	move_target = pos

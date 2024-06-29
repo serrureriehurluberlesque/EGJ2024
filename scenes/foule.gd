@@ -20,14 +20,14 @@ func _ready():
 	
 	for i in PEOPLE_BEFORE_JOUEUR:
 		var extra = preload(scene_extra).instantiate()
-		extra.set_position(get_position() + Vector2(0, i * 32))
 		extra.can_move = false
+		extra.set_position(Vector2(0, i * 32))
 		extras.append(extra)
 		add_child(extra)
 	
 	joueur = preload(scene_joueur).instantiate()
-	joueur.set_position(get_position() + Vector2(0, PEOPLE_BEFORE_JOUEUR * 32))
 	joueur.can_move = false
+	joueur.set_position(Vector2(0, PEOPLE_BEFORE_JOUEUR * 32))
 	add_child(joueur)
 	
 
