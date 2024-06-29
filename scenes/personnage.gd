@@ -9,23 +9,34 @@ class_name Personnage
 var can_move = true
 var t = 0
 var moving = false
-var sprites_walk = {Vector2(0, -1): [], Vector2(0, 1): [], Vector2(-1, 0): [], Vector2(1, 0): []}
-var sprites_idle = []
+var sprites = {}
+var direction_walk = {Vector2(0, -1): "walk_back", Vector2(0, 1): "walk_front", Vector2(-1, 0): "walk_side", Vector2(1, 0): "walk_side"}
 var move_target = null
 
 func _ready():
-	sprites_idle.append(load("res://assets/" + sprite_name + "_idle.png"))
-	
-	var directions = {Vector2(0, -1): "_walk_back_", Vector2(0, 1): "_walk_front_", Vector2(-1, 0): "_walk_side_", Vector2(1, 0): "_walk_side_"}
-	for n in directions:
+	var list_sprite_names = ["tase", "idle"]
+	var unique = []
+	for d in direction_walk.values():
+		if not unique.has(d):
+			unique.append(d)
+			
+	for d in unique:
+		list_sprite_names.append(d)
+		
+	for lsn in list_sprite_names:
+		sprites[lsn] = []
 		for i in 4:
-			var text = load("res://assets/" + sprite_name + directions[n] + str(i + 1) + ".png")
-			sprites_walk[n].append(text)
-	
-	$Sprite2D.texture = sprites_idle[0]
+			var p = "res://assets/" + sprite_name + "_" + lsn + "_" + str(i + 1) + ".png"
+			if ResourceLoader.exists(p):
+				sprites[lsn].append(load(p))
+				
+	animate_move()
 
 func _process(delta):
 	t += delta
+	
+	_pre_move()
+	
 	if move_target:
 		var dpos = move_target - get_global_position()
 		
@@ -46,18 +57,26 @@ func _process(delta):
 		animate_move(moving)
 	moving = false
 	
+	_post_move()
+	
 	if $ShadeOutTimer.time_left > 0:
 		modulate.a = sin($ShadeOutTimer.time_left * (PI / 2) / $ShadeOutTimer.wait_time)
 
+func _pre_move():
+	pass
+
+func _post_move():
+	pass
+	
 func animate_move(d=Vector2(0, 0)):
-	if d:
-		$Sprite2D.texture = sprites_walk[d][int(t * 6) % 4]
+	if d and sprites[direction_walk[d]]:
+		$Sprite2D.texture = sprites[direction_walk[d]][int(t * 6) % len(sprites[direction_walk[d]])]
 		if d == Vector2(1, 0):
 			$Sprite2D.flip_h = true
 		else:
 			$Sprite2D.flip_h = false
 	else:
-		$Sprite2D.texture = sprites_idle[int(t * 6) % 1]
+		$Sprite2D.texture = sprites["idle"][int(t * 6) % len(sprites["idle"])]
 
 func movable():
 	can_move = true
