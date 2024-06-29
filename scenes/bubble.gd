@@ -29,7 +29,7 @@ func float_array_to_Vector2Array(coords : Array) -> PackedVector2Array:
 			elif vec.y < 1.0:
 				vec.y -= 1 * (n - 1)
 				
-		array.append(vec * 16)
+		array.append(vec * 12)
 
 	return array
 

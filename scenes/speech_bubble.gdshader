@@ -10,7 +10,7 @@ void fragment() {
 //	float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
 	COLOR.rgb = vec3(0);
 	
-	if (COLOR.a > 0.47)
+	if (COLOR.a > 0.5)
 	    COLOR.a = 1.0;
 	else
 	    COLOR.a = 0.0;
