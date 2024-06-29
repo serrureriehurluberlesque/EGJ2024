@@ -3,6 +3,7 @@ class_name Personnage
 
 @export var SPEED = 100.0
 @onready var bubble_scene = preload("res://scenes/speech_bubble.tscn")
+var voices = []
 
 @export var sprite_name = "Chara"
 
@@ -16,6 +17,7 @@ var is_employee = false
 
 func _ready():
 	_pre_ready()
+	
 	var list_sprite_names = ["taser", "idle"]
 	var unique = []
 	for d in direction_walk.values():

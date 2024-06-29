@@ -43,6 +43,9 @@ func _on_speak(rep, native=false, venere=false):
 		bubble.get_node("Bubble").modulate = Color(1.0, 0.0, 0.0)
 	
 	get_node("..").add_child(bubble)
+	if "voices" in get_node("..") and len(get_node("..").voices) > 0:
+		$Voice.stream = get_node("..").voices[randi() % len(get_node("..").voices)]
+		$Voice.play()
 	
 	for node in $SpeakArea.get_overlapping_bodies():
 		if node.is_employee != get_node("..").is_employee:

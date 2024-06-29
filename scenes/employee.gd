@@ -6,12 +6,15 @@ var expected_response = 0
 
 var is_employee = true
 var is_content = false
-
+var voices = []
 func is_player():
 	return false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for i in 7:
+		voices.append(load("res://assets/sounds/voices/%s/%s.wav" % ["ROBOTO", i + 1]))
+	
 	var plus = "_plus" if is_plus else ""
 	var p = "res://assets/Employee_" + str(emp_type) + plus + ".png"
 	
