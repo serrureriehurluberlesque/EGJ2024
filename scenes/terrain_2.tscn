@@ -15,7 +15,7 @@ script = ExtResource("3_86h1u")
 
 [node name="Foule" parent="." index="0"]
 position = Vector2(16, 104)
-t_next = 5.5
+t_next = 7.5
 
 [node name="Garde" parent="." index="1"]
 position = Vector2(142, 32)
@@ -25,17 +25,17 @@ timeout = 90.0
 position = Vector2(-130, -101)
 
 [node name="Employee" parent="." index="4" instance=ExtResource("2_13vm6")]
-position = Vector2(66, -41)
-emp_type = 2
+position = Vector2(48, -42)
+emp_type = 1
 
 [node name="Employee3" parent="." index="5" instance=ExtResource("2_13vm6")]
-position = Vector2(-62, -41)
-emp_type = 2
+position = Vector2(-39, -42)
+emp_type = 1
+is_plus = true
 
 [node name="Employee4" parent="." index="6" instance=ExtResource("2_13vm6")]
 position = Vector2(-129, 89)
-emp_type = 1
-is_plus = true
+emp_type = 2
 
 [node name="Desk" type="StaticBody2D" parent="." index="7"]
 collision_layer = 8

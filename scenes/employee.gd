@@ -2,7 +2,9 @@ extends StaticBody2D
 
 @export var emp_type: int
 @export var is_plus: bool
+@onready var randomed = randi() % 2
 var expected_response = 0
+var given_response = []
 
 var is_employee = true
 var is_content = false
@@ -26,21 +28,59 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
-	var rep = randi() % 3 + 1
-	expected_response = rep
-	$Speaker.speak.emit(rep, true)
-	$ValidationTimer.start()
+	if emp_type == 1:
+		var delta = 0
+		if is_plus:
+			if randomed > 0.5:
+				delta = 1
+			else:
+				delta = -1
+		
+		var rep = randi() % 3 + 1
+		if rep + delta > 3:
+			rep -= 1
+		if rep + delta < 1:
+			rep += 1
+		
+		expected_response = rep + delta
+			
+		$Speaker.speak.emit(rep, true)
+		$ValidationTimer.start()
+	elif emp_type == 2:
+		var rep = [randi() % 3 + 1, randi() % 3 + 1]
+		expected_response = rep
+		$ValidationTimer.wait_time = 10
+		$ValidationTimer.start()
+		$Speaker.speak.emit(rep[0], true)
+		await get_tree().create_timer(1.5).timeout
+		$Speaker.speak.emit(rep[1], true)
+	else:
+		pass
 
 func listen(source, rep):
 	var node = source.get_node("..")
+	print(node, rep)
 	if node.is_player():
-		if rep != expected_response: # TODO pas forcément identité
-			print("WRONG (%d != %d)" % [rep, expected_response])
-			get_node("..").osekour()
+		if typeof(expected_response) == TYPE_INT:
+			if rep != expected_response: # TODO pas forcément identité
+				print("WRONG (%d != %d)" % [rep, expected_response])
+				get_node("..").osekour()
+			else:
+				print("CORRECT")
+				expected_response = 0
+				is_content = true
 		else:
-			print("CORRECT")
-			expected_response = 0
-			is_content = true
+			given_response.append(rep)
+			if len(given_response) == len(expected_response):
+				if given_response != expected_response: # TODO pas forcément identité
+					print("WRONG (%d != %d)" % [given_response, expected_response])
+					get_node("..").osekour()
+					given_response = []
+				else:
+					print("CORRECT")
+					expected_response = 0
+					given_response = []
+					is_content = true
 
 	$ValidationTimer.stop()
 

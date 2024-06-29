@@ -1,6 +1,6 @@
 extends Node
 
-var expected_answer: int
+var expected_answer
 var todos = []
 
 func give_todos(ls):
@@ -22,7 +22,15 @@ func think(time):
 
 func think_and_answer(source, rep):
 	expected_answer = source.get_node("..").expected_response
+	if typeof(expected_answer) != TYPE_INT:
+		$ThinkTimer.wait_time = 2.5
 	$ThinkTimer.start()
 
 func _on_think_timer_timeout():
-	get_node("../Speaker").speak.emit(expected_answer, true)
+	if typeof(expected_answer) == TYPE_INT:
+		get_node("../Speaker").speak.emit(expected_answer, true)
+	else:
+		print(expected_answer)
+		for e in expected_answer:
+			get_node("../Speaker").speak.emit(e, true)
+			await get_tree().create_timer(1.5).timeout

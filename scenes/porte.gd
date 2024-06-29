@@ -11,6 +11,7 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
+	await get_tree().create_timer(0.5).timeout
 	if body.is_player():
 		if get_node("..").isokpourpasser():
 			get_node("/root/Main").next_level()
