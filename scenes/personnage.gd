@@ -14,7 +14,7 @@ var direction_walk = {Vector2(0, -1): "walk_back", Vector2(0, 1): "walk_front", 
 var move_target = null
 
 func _ready():
-	var list_sprite_names = ["tase", "idle"]
+	var list_sprite_names = ["taser", "idle"]
 	var unique = []
 	for d in direction_walk.values():
 		if not unique.has(d):

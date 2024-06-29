@@ -47,7 +47,6 @@ texture = ExtResource("1_2nyhv")
 position = Vector2(32, 32)
 
 [node name="Garde" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" instance=ExtResource("3_h2cqo")]
-SPEED = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="Center/Salle/SubViewportContainer/SubViewport"]
 offset = Vector2(176, 128)
