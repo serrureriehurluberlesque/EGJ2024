@@ -102,7 +102,6 @@ func move(v, delta):
 		moving = v
 
 func move_to(pos):
-	print(self.name, pos)
 	if pos == Vector2(0, 0):
 		print("Warning pos 0,0 ça va foutre la merde")
 	move_target = pos
