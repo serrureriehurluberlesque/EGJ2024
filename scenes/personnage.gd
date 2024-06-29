@@ -39,19 +39,10 @@ func animate_move(d=Vector2(0, 0)):
 			$Sprite2D.flip_h = false
 	else:
 		$Sprite2D.texture = sprites_idle[int(t * 6) % 1]
-		
-
-func speak():
-	# Create a new instance of the SpeechBubble scene.
-	var bubble = bubble_scene.instantiate()
-	bubble.text = "Un ou deux mots"
-	bubble.position = Vector2(0, -110)
-	
-	add_child(bubble)
 
 func movable():
 	can_move = true
-	speak()
+	$Speaker.speak.emit()
 
 func move(v, delta):
 	if can_move:

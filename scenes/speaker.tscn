@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ngvmdx2al7s"]
+
+[ext_resource type="Script" path="res://scenes/speaker.gd" id="1_alnmq"]
+[ext_resource type="PackedScene" uid="uid://c1hty1782x6mt" path="res://scenes/speech_bubble.tscn" id="2_5sgsf"]
+
+[node name="Speaker" type="Node"]
+script = ExtResource("1_alnmq")
+bubble_scene = ExtResource("2_5sgsf")
+
+[connection signal="speak" from="." to="." method="_on_speak"]
