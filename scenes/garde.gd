@@ -4,8 +4,12 @@ var pre_tasing = false
 var tased = false
 @onready var j = get_node("../Foule/Joueur")
 
+func _pre_ready():
+	for i in 7:
+		voices.append(load("res://assets/sounds/voices/%s/%s.wav" % ["GARDE", i + 1]))
+
 func _pre_move():
-	if not pre_tasing and t > 15.0:
+	if not pre_tasing and t > 30.0:
 		start_pre_tase()
 	if pre_tasing and (j.get_global_position() - get_global_position()).length() < 48:
 		start_tase()
@@ -19,6 +23,8 @@ func se_venere():
 	$Speaker.speak.emit(randi() % 3 + 1, true, true)
 	
 func start_pre_tase():
+	if get_node("/root/Main").DoorSound.is_playing():
+		return
 	se_venere()
 	pre_tasing = true
 	j.not_movable()
