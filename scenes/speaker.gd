@@ -2,6 +2,7 @@ extends Node
 @export var bubble_scene: PackedScene
 signal speak
 
+
 #var POSSIBLE_SPEECH = ["gŧœng", "Gong gong", "Gong gong gong", "gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong "]
 var SOUP_LETTERS = [
 	['$', '§', 'Š', 'Ƨ', 'Ș', 'Σ', '₴', 'ȿ', 'σ', 'ṩ'],
@@ -40,3 +41,6 @@ func _on_speak(rep, native=false):
 	bubble.position = Vector2(0, - (get_node("../Sprite2D").texture.get_height() + bubble.size.y + 3))
 
 	get_node("..").add_child(bubble)
+	
+	for node in $SpeakArea.get_overlapping_bodies():
+		node.listen(self, rep)

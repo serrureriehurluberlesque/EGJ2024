@@ -107,3 +107,6 @@ func _on_shade_out_timer_timeout():
 
 func _shade_out():
 	pass
+
+func listen():
+	print("I'm personnally listening")
