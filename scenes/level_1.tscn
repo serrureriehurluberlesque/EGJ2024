@@ -1,9 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbeiecykonaym"]
+[gd_scene load_steps=5 format=3 uid="uid://diwo1ikvhiqlv"]
 
 [ext_resource type="PackedScene" uid="uid://c23bpyvvlxhsx" path="res://scenes/level.tscn" id="1_l3od6"]
 [ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="2_h0s2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sacp8"]
+size = Vector2(352, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_502jx"]
+size = Vector2(82, 100)
 
 [node name="Level1" instance=ExtResource("1_l3od6")]
 
 [node name="Employee" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="2" instance=ExtResource("2_h0s2l")]
 position = Vector2(60, -16)
+
+[node name="Sky" type="StaticBody2D" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="3"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="SkyShape" type="CollisionShape2D" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain/Sky" index="0"]
+position = Vector2(0, -128)
+shape = SubResource("RectangleShape2D_sacp8")
+
+[node name="Sign" type="StaticBody2D" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="4"]
+collision_layer = 8
+
+[node name="SignShape" type="CollisionShape2D" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain/Sign" index="0"]
+position = Vector2(-118, 78)
+shape = SubResource("RectangleShape2D_502jx")

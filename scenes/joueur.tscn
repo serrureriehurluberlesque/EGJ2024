@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bt2brvj5wju04"]
+[gd_scene load_steps=6 format=3 uid="uid://bt2brvj5wju04"]
 
 [ext_resource type="PackedScene" uid="uid://dvgtvklfyagb5" path="res://scenes/personnage.tscn" id="1_o2ysa"]
 [ext_resource type="Script" path="res://scenes/Controle.gd" id="2_2keg3"]
 [ext_resource type="Script" path="res://scenes/joueur.gd" id="2_6uerq"]
 [ext_resource type="Texture2D" uid="uid://d07rjgslghr1s" path="res://assets/Chara_idle.png" id="2_cjfhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuqep"]
+size = Vector2(19, 32)
 
 [node name="Joueur" instance=ExtResource("1_o2ysa")]
 script = ExtResource("2_6uerq")
@@ -13,3 +16,7 @@ texture = ExtResource("2_cjfhx")
 
 [node name="Controle" type="Node" parent="." index="1"]
 script = ExtResource("2_2keg3")
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2(1.5, -16)
+shape = SubResource("RectangleShape2D_kuqep")
