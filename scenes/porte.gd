@@ -13,3 +13,5 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	body.not_movable()
 	body.shade_out()
+	if body.is_player():
+		get_node("/root/Main").next_level()

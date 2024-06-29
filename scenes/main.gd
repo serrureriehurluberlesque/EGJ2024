@@ -13,17 +13,18 @@ func _ready():
 func _process(delta):
 	pass
 
+func door_sound():
+	$DoorSound.play()
+	
 func next_level(dead=false):
 	if dead:
 		$DeathSound.play()
 	else:
 		$DoorSound.play()
-
-func _on_door_sound_finished():
-	level_number += 1
-	load_next_level()
-
-func _on_death_sound_finished():
+		level_number += 1
+	$NextLevelTimer.start()
+	
+func _on_next_level_timer_timeout():
 	load_next_level()
 	
 func load_next_level():
@@ -31,5 +32,3 @@ func load_next_level():
 		level.free()
 	level = load("res://scenes/level_" + str(level_number) + ".tscn").instantiate()
 	add_child(level)
-
-

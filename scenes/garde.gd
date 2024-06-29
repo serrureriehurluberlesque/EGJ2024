@@ -23,5 +23,5 @@ func start_tase():
 	if not tased and not $TaserTimer.time_left > 0:
 		$TaserTimer.start()
 		tased = true
-		get_node("/root/Main").next_level()
+		get_node("/root/Main").next_level(true)
 		j.shade_out()

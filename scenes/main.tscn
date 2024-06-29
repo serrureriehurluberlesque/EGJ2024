@@ -23,5 +23,8 @@ stream = ExtResource("2_r4bks")
 stream = ExtResource("4_8kkst")
 autoplay = true
 
-[connection signal="finished" from="DoorSound" to="." method="_on_door_sound_finished"]
-[connection signal="finished" from="DeathSound" to="." method="_on_death_sound_finished"]
+[node name="NextLevelTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="NextLevelTimer" to="." method="_on_next_level_timer_timeout"]
