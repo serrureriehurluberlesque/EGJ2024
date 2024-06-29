@@ -5,7 +5,7 @@ var tased = false
 @onready var j = get_node("../Foule/Joueur")
 
 func _pre_move():
-	if not pre_tasing and t > 30.0:
+	if not pre_tasing and t > 15.0:
 		start_pre_tase()
 	if pre_tasing and (j.get_global_position() - get_global_position()).length() < 48:
 		start_tase()

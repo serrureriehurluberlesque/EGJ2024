@@ -5,7 +5,10 @@ extends StaticBody2D
 var expected_response = 0
 
 var is_employee = true
+var is_content = false
 
+func is_player():
+	return false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,15 +29,21 @@ func _on_area_2d_body_entered(body):
 	$ValidationTimer.start()
 
 func listen(source, rep):
-	if source != $Speaker:
+	var node = source.get_node("..")
+	if node.is_player():
 		if rep != expected_response: # TODO pas forcément identité
 			print("WRONG (%d != %d)" % [rep, expected_response])
+			node.get_node("../..").osekour()
 		else:
 			print("CORRECT")
 			$ValidationTimer.stop()
 			expected_response = 0
-
+			is_content = true
 
 func _on_validation_timer_timeout():
 	print("WRONG (timer timeout!)")
 	expected_response = 0
+	get_node("../..").osekour()
+	
+func se_venere():
+	get_node("../..").osekour()

@@ -20,8 +20,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_speak(rep, native=false, venere=false):
-	print("blablabla")
+func _on_speak(rep, native=false):
 	var words = ""
 	
 	for n in rep:
