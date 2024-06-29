@@ -17,8 +17,6 @@ func float_array_to_Vector2Array(coords : Array) -> PackedVector2Array:
 	var array : PackedVector2Array = []
 	#var n = get_node("../Text").text.split(" ").size() - 1
 	var n = get_node("../Text").get_line_count()
-	get_node("../Text").text += str(n)
-	
 	
 	for coord in coords:
 		var vec = Vector2(coord[0], coord[1])

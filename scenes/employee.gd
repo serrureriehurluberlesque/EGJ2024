@@ -12,5 +12,4 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	print("hello")
-	$Speaker.speak.emit(3, true)
+	$Speaker.speak.emit(randi() % 3 + 1, true)

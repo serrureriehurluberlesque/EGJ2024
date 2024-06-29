@@ -18,6 +18,7 @@ script = ExtResource("1_qufo7")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="SpeakArea" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_k3ryx")
@@ -27,7 +28,8 @@ texture = SubResource("PlaceholderTexture2D_w6s8r")
 
 [node name="Speaker" parent="." instance=ExtResource("2_hfwxk")]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_r3f25")

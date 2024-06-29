@@ -50,6 +50,7 @@ position = Vector2(32, 32)
 [node name="Garde" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" instance=ExtResource("3_h2cqo")]
 
 [node name="Employee" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" instance=ExtResource("4_htb3l")]
+position = Vector2(-150, 50)
 
 [node name="Camera2D" type="Camera2D" parent="Center/Salle/SubViewportContainer/SubViewport"]
 offset = Vector2(176, 128)
