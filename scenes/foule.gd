@@ -29,8 +29,6 @@ func _ready():
 	joueur.can_move = false
 	joueur.set_position(Vector2(0, PEOPLE_BEFORE_JOUEUR * 32))
 	add_child(joueur)
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

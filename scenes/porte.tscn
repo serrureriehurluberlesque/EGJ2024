@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvjon2glotxkw"]
+[gd_scene load_steps=3 format=3 uid="uid://b1t4pog2dnx58"]
 
 [ext_resource type="Script" path="res://scenes/porte.gd" id="1_8ldg8"]
 
@@ -13,4 +13,4 @@ script = ExtResource("1_8ldg8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_jpp6a")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

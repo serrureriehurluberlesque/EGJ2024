@@ -17,10 +17,10 @@ offset = Vector2(0, -16)
 
 [node name="Speaker" parent="." instance=ExtResource("3_u4u1m")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Body" type="RigidBody2D" parent="."]
 position = Vector2(0, -16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 shape = SubResource("RectangleShape2D_lhdsu")
 
 [node name="ShadeOutTimer" type="Timer" parent="."]

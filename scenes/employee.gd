@@ -10,5 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
+
 func _on_area_2d_body_entered(body):
-	body.get_node("..").shade_out()
+	print("hello")
+	$Speaker.speak.emit(3, true)
