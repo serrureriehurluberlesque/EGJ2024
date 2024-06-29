@@ -20,6 +20,7 @@ font_size = 10
 font_color = Color(0, 0, 0, 1)
 
 [node name="SpeechBubble" type="Control"]
+z_index = 3
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
