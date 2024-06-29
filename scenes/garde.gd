@@ -4,7 +4,7 @@ var pre_tasing = false
 var tased = false
 @onready var j = get_node("../Foule/Joueur")
 func _pre_move():
-	if not pre_tasing and t > 7.0:
+	if not pre_tasing and t > 10.0:
 		start_pre_tase()
 	if pre_tasing and (j.get_global_position() - get_global_position()).length() < 48:
 		start_tase()
@@ -16,12 +16,12 @@ func _post_move():
 
 func start_pre_tase():
 	pre_tasing = true
+	j.not_movable()
 	move_to(j.get_global_position() + Vector2(24, 0))
 
 func start_tase():
 	if not tased and not $TaserTimer.time_left > 0:
 		$TaserTimer.start()
 		tased = true
-
-func _on_taser_timer_timeout():
-	get_node("/root/Main").next_level()
+		get_node("/root/Main").next_level()
+		j.shade_out()

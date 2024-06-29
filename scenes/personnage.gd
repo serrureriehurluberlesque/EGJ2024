@@ -81,9 +81,11 @@ func animate_move(d=Vector2(0, 0)):
 	else:
 		$Sprite2D.texture = sprites["idle"][int(t * 6) % len(sprites["idle"])]
 
+func not_movable():
+	can_move = false
+	
 func movable():
 	can_move = true
-	$Speaker.speak.emit(randi() % 3 + 1, true)
 
 func move(v, delta):
 	if can_move:
