@@ -4,6 +4,7 @@ extends Node2D
 
 var t = 0
 var t_next = 1.5
+var t_avance = 0.0
 var spawning = true
 
 const scene_joueur = "res://scenes/joueur.tscn"
@@ -37,6 +38,12 @@ func _process(delta):
 		if t > t_next:
 			next()
 			t -= t_next
+	if t_avance > 0:
+		t_avance -= delta
+		var SPEED = 40
+		for e in extras:
+			e.apply_central_force(SPEED * 10 * Vector2(-1, 0))
+		joueur.apply_central_force(SPEED * 10 * Vector2(-1, 0))
 
 func next():
 	var suivant = extras.pop_front()
@@ -45,3 +52,5 @@ func next():
 		spawning = false
 	
 	suivant.movable()
+	if suivant != joueur:
+		t_avance = 0.82
