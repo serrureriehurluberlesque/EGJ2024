@@ -1,33 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://c02qi4onafcfb"]
+[gd_scene load_steps=7 format=3 uid="uid://c02qi4onafcfb"]
 
 [ext_resource type="PackedScene" uid="uid://diar0tgb5r0j5" path="res://scenes/terrain.tscn" id="1_lq28u"]
 [ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="2_13vm6"]
 [ext_resource type="Texture2D" uid="uid://csfo0511i0k02" path="res://assets/Tableau2.png" id="2_we0tf"]
+[ext_resource type="Script" path="res://scenes/terrain_2.gd" id="3_86h1u"]
 [ext_resource type="Texture2D" uid="uid://buprg8wkis4sf" path="res://assets/desk.png" id="4_cl74m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euhft"]
-size = Vector2(183, 31)
+size = Vector2(183, 12)
 
 [node name="Terrain" instance=ExtResource("1_lq28u")]
 texture = ExtResource("2_we0tf")
+script = ExtResource("3_86h1u")
+
+[node name="Foule" parent="." index="0"]
+position = Vector2(16, 104)
+t_next = 5.5
 
 [node name="Garde" parent="." index="1"]
 position = Vector2(142, 32)
+timeout = 90.0
 
 [node name="Porte" parent="." index="2"]
 position = Vector2(-130, -101)
 
 [node name="Employee" parent="." index="4" instance=ExtResource("2_13vm6")]
-position = Vector2(64, -50)
+position = Vector2(66, -41)
 emp_type = 2
 
 [node name="Employee3" parent="." index="5" instance=ExtResource("2_13vm6")]
-position = Vector2(-64, -50)
+position = Vector2(-62, -41)
 emp_type = 2
-is_plus = true
 
 [node name="Employee4" parent="." index="6" instance=ExtResource("2_13vm6")]
 position = Vector2(-129, 89)
+emp_type = 1
+is_plus = true
 
 [node name="Desk" type="StaticBody2D" parent="." index="7"]
 collision_layer = 8
@@ -37,5 +45,5 @@ collision_mask = 3
 texture = ExtResource("4_cl74m")
 
 [node name="DeskShape" type="CollisionShape2D" parent="Desk" index="1"]
-position = Vector2(11.5, -18.5)
+position = Vector2(13, -20)
 shape = SubResource("RectangleShape2D_euhft")
