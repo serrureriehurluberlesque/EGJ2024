@@ -1,11 +1,17 @@
 extends StaticBody2D
 
+@export var emp_type: int
+@export var is_plus: bool
 var expected_response = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	var plus = "_plus" if is_plus else ""
+	var p = "res://assets/Employee_" + str(emp_type) + plus + ".png"
+	
+	if ResourceLoader.exists(p):
+		$Sprite2D.texture = load(p)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
