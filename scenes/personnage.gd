@@ -61,7 +61,7 @@ func animate_move(d=Vector2(0, 0)):
 
 func movable():
 	can_move = true
-	$Speaker.speak.emit()
+	$Speaker.speak.emit(randi() % 3 + 1, true)
 
 func move(v, delta):
 	if can_move:

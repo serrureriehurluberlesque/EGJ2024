@@ -1,34 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1hty1782x6mt"]
+[gd_scene load_steps=6 format=3 uid="uid://c1hty1782x6mt"]
 
+[ext_resource type="FontFile" uid="uid://qeiefwcidcbp" path="res://assets/fonts/PlaywriteDEGrund-VariableFont_wght.ttf" id="1_4mpaf"]
 [ext_resource type="Script" path="res://scenes/speech_bubble.gd" id="1_vy0su"]
+[ext_resource type="Script" path="res://scenes/bubble.gd" id="2_2ce0m"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1f15a"]
-content_margin_left = 7.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-anti_aliasing = false
+[sub_resource type="FontVariation" id="FontVariation_rp4w2"]
+base_font = ExtResource("1_4mpaf")
+spacing_top = -3
+spacing_bottom = -2
 
-[sub_resource type="LabelSettings" id="LabelSettings_n36xx"]
-font_size = 9
+[sub_resource type="LabelSettings" id="LabelSettings_hmt4q"]
+line_spacing = 0.0
+font = SubResource("FontVariation_rp4w2")
+font_size = 10
 font_color = Color(0, 0, 0, 1)
 
-[node name="SpeechBubble" type="Label"]
+[node name="SpeechBubble" type="Control"]
+layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -32.0
-offset_right = 64.0
+offset_right = 120.0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_1f15a")
-label_settings = SubResource("LabelSettings_n36xx")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
 script = ExtResource("1_vy0su")
 metadata/_edit_group_ = true
 
@@ -42,6 +36,19 @@ one_shot = true
 [node name="FadeInTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="Bubble" type="Label" parent="."]
+layout_mode = 0
+script = ExtResource("2_2ce0m")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 80.0
+offset_bottom = 31.0
+label_settings = SubResource("LabelSettings_hmt4q")
+autowrap_mode = 2
 
 [connection signal="timeout" from="SpeechTimer" to="." method="_on_speech_timer_timeout"]
 [connection signal="timeout" from="FadeOutTimer" to="." method="_on_fade_out_timer_timeout"]
