@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlwu5mqja6113"]
+
+[ext_resource type="PackedScene" uid="uid://diar0tgb5r0j5" path="res://scenes/terrain.tscn" id="1_757ke"]
+[ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="2_isnmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qduv6"]
+size = Vector2(352, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oehox"]
+size = Vector2(82, 100)
+
+[node name="Terrain" instance=ExtResource("1_757ke")]
+
+[node name="Employee" parent="." index="4" instance=ExtResource("2_isnmc")]
+position = Vector2(60, -16)
+
+[node name="Sky" type="StaticBody2D" parent="." index="5"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="SkyShape" type="CollisionShape2D" parent="Sky" index="0"]
+position = Vector2(0, -128)
+shape = SubResource("RectangleShape2D_qduv6")
+
+[node name="Sign" type="StaticBody2D" parent="." index="6"]
+collision_layer = 8
+
+[node name="SignShape" type="CollisionShape2D" parent="Sign" index="0"]
+position = Vector2(-118, 78)
+shape = SubResource("RectangleShape2D_oehox")

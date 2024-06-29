@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://diar0tgb5r0j5"]
+
+[ext_resource type="Texture2D" uid="uid://b4hktupohnf7o" path="res://assets/Tableau1.png" id="1_48t2d"]
+[ext_resource type="PackedScene" uid="uid://b00twpjkqplwd" path="res://scenes/foule.tscn" id="2_m5kla"]
+[ext_resource type="PackedScene" uid="uid://bdwx1mqql5tcu" path="res://scenes/garde.tscn" id="3_tf1qb"]
+[ext_resource type="PackedScene" uid="uid://b1t4pog2dnx58" path="res://scenes/porte.tscn" id="4_4eg23"]
+
+[node name="Terrain" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(176, 128)
+texture = ExtResource("1_48t2d")
+
+[node name="Foule" parent="." instance=ExtResource("2_m5kla")]
+position = Vector2(32, 128)
+
+[node name="Garde" parent="." instance=ExtResource("3_tf1qb")]
+position = Vector2(-120, 10)
+
+[node name="Porte" parent="." instance=ExtResource("4_4eg23")]
+position = Vector2(10, -53)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-176, -128)
+offset = Vector2(176, 128)
+process_callback = 0
