@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://yjt2tggvmvm6"]
+[gd_scene load_steps=5 format=3 uid="uid://yjt2tggvmvm6"]
 
-[ext_resource type="Texture2D" uid="uid://botlqywgqddqd" path="res://assets/icon.png" id="1_imtky"]
-[ext_resource type="PackedScene" uid="uid://b00twpjkqplwd" path="res://scenes/foule.tscn" id="2_865qn"]
+[ext_resource type="PackedScene" uid="uid://c23bpyvvlxhsx" path="res://scenes/level.tscn" id="1_vq7i4"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_w67ax"]
+[ext_resource type="AudioStream" uid="uid://dxxqjy525srmf" path="res://assets/door.wav" id="2_r4bks"]
+[ext_resource type="AudioStream" uid="uid://cjo1venyri0qk" path="res://assets/music.ogg" id="4_8kkst"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -10,43 +12,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w67ax")
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Level" parent="." instance=ExtResource("1_vq7i4")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="Salle" type="Control" parent="Center"]
-layout_mode = 2
+[node name="DoorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r4bks")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Center/Salle"]
-texture_filter = 1
-layout_mode = 2
-offset_left = -704.0
-offset_top = -512.0
-offset_right = 704.0
-offset_bottom = 512.0
-scale = Vector2(4, 4)
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8kkst")
+autoplay = true
 
-[node name="SubViewport" type="SubViewport" parent="Center/Salle/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(352, 256)
-render_target_update_mode = 4
-
-[node name="Terrain" type="Sprite2D" parent="Center/Salle/SubViewportContainer/SubViewport"]
-self_modulate = Color(1, 1, 1, 0.670588)
-texture_filter = 1
-position = Vector2(176, 128)
-scale = Vector2(11, 8)
-texture = ExtResource("1_imtky")
-
-[node name="Foule" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" instance=ExtResource("2_865qn")]
-position = Vector2(2.18182, 2.75)
-scale = Vector2(0.0909091, 0.125)
-
-[node name="Camera2D" type="Camera2D" parent="Center/Salle/SubViewportContainer/SubViewport"]
-offset = Vector2(176, 128)
-process_callback = 0
+[connection signal="finished" from="DoorSound" to="." method="_on_door_sound_finished"]

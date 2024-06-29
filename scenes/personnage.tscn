@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvgtvklfyagb5"]
+[gd_scene load_steps=5 format=3 uid="uid://dvgtvklfyagb5"]
 
 [ext_resource type="Texture2D" uid="uid://botlqywgqddqd" path="res://assets/icon.png" id="1_iuen1"]
 [ext_resource type="Script" path="res://scenes/personnage.gd" id="1_vsu51"]
 [ext_resource type="PackedScene" uid="uid://2ngvmdx2al7s" path="res://scenes/speaker.tscn" id="3_u4u1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhdsu"]
+size = Vector2(32, 32)
 
 [node name="Personnage" type="Node2D"]
 script = ExtResource("1_vsu51")
@@ -13,3 +16,9 @@ texture = ExtResource("1_iuen1")
 offset = Vector2(0, -16)
 
 [node name="Speaker" parent="." instance=ExtResource("3_u4u1m")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_lhdsu")

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdwx1mqql5tcu"]
+
+[ext_resource type="PackedScene" uid="uid://dvgtvklfyagb5" path="res://scenes/personnage.tscn" id="1_ljuek"]
+
+[node name="Garde" instance=ExtResource("1_ljuek")]
