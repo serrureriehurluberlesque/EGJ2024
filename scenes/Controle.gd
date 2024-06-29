@@ -8,5 +8,5 @@ func _process(delta):
 			get_node("..").move(directions[d], delta)
 	
 	for i in 3:
-		if Input.is_action_just_pressed("speak_" + str(i + 1)):
+		if get_node("..").can_move and Input.is_action_just_pressed("speak_" + str(i + 1)):
 			get_node("../Speaker").speak.emit(i + 1, false)
