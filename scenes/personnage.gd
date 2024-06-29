@@ -110,3 +110,6 @@ func _shade_out():
 
 func is_player():
 	false
+
+func listen():
+	print("I'm personnally listening")
