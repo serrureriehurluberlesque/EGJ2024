@@ -16,7 +16,7 @@ func _post_move():
 		$Sprite2D.texture = sprites["taser"][n]
 
 func se_venere():
-	$Speaker.speak.emit(1, true, true)
+	$Speaker.speak.emit(randi() % 3 + 1, true, true)
 	
 func start_pre_tase():
 	se_venere()
