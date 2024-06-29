@@ -43,7 +43,7 @@ func listen(source, rep):
 func _on_validation_timer_timeout():
 	print("WRONG (timer timeout!)")
 	expected_response = 0
-	get_node("../..").osekour()
+	get_node("..").osekour()
 	
 func se_venere():
 	$Speaker.speak.emit(randi() % 3 + 1, true, true)
