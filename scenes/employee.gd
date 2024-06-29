@@ -33,12 +33,13 @@ func listen(source, rep):
 	if node.is_player():
 		if rep != expected_response: # TODO pas forcément identité
 			print("WRONG (%d != %d)" % [rep, expected_response])
-			node.get_node("../..").osekour()
+			get_node("..").osekour()
 		else:
 			print("CORRECT")
-			$ValidationTimer.stop()
 			expected_response = 0
 			is_content = true
+
+	$ValidationTimer.stop()
 
 func _on_validation_timer_timeout():
 	print("WRONG (timer timeout!)")
