@@ -1,4 +1,5 @@
 extends Node2D
+class_name Personnage
 
 @export var SPEED = 100.0
 @onready var bubble_scene = preload("res://scenes/speech_bubble.tscn")
@@ -38,11 +39,15 @@ func _process(delta):
 			move(Vector2(0, -1), delta)
 		if can_move and not moving:
 			move_target = null
+	
 	if not moving:
 		animate_move()
 	else:
 		animate_move(moving)
 	moving = false
+	
+	if $ShadeOutTimer.time_left > 0:
+		modulate.a = sin($ShadeOutTimer.time_left * (PI / 2) / $ShadeOutTimer.wait_time)
 
 func animate_move(d=Vector2(0, 0)):
 	if d:
@@ -67,3 +72,13 @@ func move_to(pos):
 	if pos == Vector2(0, 0):
 		print("Warning pos 0,0 ça va foutre la merde")
 	move_target = pos
+
+func shade_out():
+	$ShadeOutTimer.start()
+
+func _on_shade_out_timer_timeout():
+	hide()
+	_shade_out()
+
+func _shade_out():
+	pass
