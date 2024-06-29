@@ -14,6 +14,7 @@ var sprites = {}
 var direction_walk = {Vector2(0, -1): "walk_back", Vector2(0, 1): "walk_front", Vector2(-1, 0): "walk_side", Vector2(1, 0): "walk_side"}
 var move_target = null
 var is_employee = false
+var is_ko = false
 
 func _ready():
 	_pre_ready()
@@ -80,14 +81,15 @@ func _post_move():
 	pass
 	
 func animate_move(d=Vector2(0, 0)):
-	if d and sprites[direction_walk[d]]:
-		$Sprite2D.texture = sprites[direction_walk[d]][int(t * 6) % len(sprites[direction_walk[d]])]
-		if d == Vector2(1, 0):
-			$Sprite2D.flip_h = true
+	if not is_ko:
+		if d and sprites[direction_walk[d]]:
+			$Sprite2D.texture = sprites[direction_walk[d]][int(t * 6) % len(sprites[direction_walk[d]])]
+			if d == Vector2(1, 0):
+				$Sprite2D.flip_h = true
+			else:
+				$Sprite2D.flip_h = false
 		else:
-			$Sprite2D.flip_h = false
-	else:
-		$Sprite2D.texture = sprites["idle"][int(t * 6) % len(sprites["idle"])]
+			$Sprite2D.texture = sprites["idle"][int(t * 6) % len(sprites["idle"])]
 
 func not_movable():
 	can_move = false

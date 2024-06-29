@@ -24,9 +24,10 @@ func is_player():
 
 func knock_out():
 	$KnockOutTimer.start()
+	# Make red
 	modulate.g = 0
 	modulate.b = 0
 
 func _on_knock_out_timer_timeout():
-	# TODO remplacer sprite par sprite_KO
-	pass
+	$Sprite2D.texture = load("res://assets/Chara_death.png")
+	is_ko = true
