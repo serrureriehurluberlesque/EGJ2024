@@ -11,6 +11,7 @@ script = ExtResource("1_alnmq")
 bubble_scene = ExtResource("2_5sgsf")
 
 [node name="SpeakArea" type="Area2D" parent="."]
+collision_mask = 3
 
 [node name="SpeakCollision" type="CollisionShape2D" parent="SpeakArea"]
 position = Vector2(0, -16)

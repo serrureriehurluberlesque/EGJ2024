@@ -6,7 +6,14 @@
 
 [node name="Extra" instance=ExtResource("1_oxx4v")]
 script = ExtResource("2_3xy85")
+SPEED = 65.0
 sprite_name = "alien_1"
 
 [node name="IA" type="Node" parent="." index="1"]
 script = ExtResource("2_dqi8n")
+
+[node name="ThinkTimer" type="Timer" parent="IA" index="0"]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="timeout" from="IA/ThinkTimer" to="IA" method="_on_think_timer_timeout"]

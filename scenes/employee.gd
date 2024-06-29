@@ -4,6 +4,8 @@ extends StaticBody2D
 @export var is_plus: bool
 var expected_response = 0
 
+var is_employee = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,8 +21,8 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	var rep = randi() % 3 + 1
-	$Speaker.speak.emit(rep, true)
 	expected_response = rep
+	$Speaker.speak.emit(rep, true)
 	$ValidationTimer.start()
 
 func listen(source, rep):

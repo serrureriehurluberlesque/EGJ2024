@@ -12,6 +12,7 @@ var moving = false
 var sprites = {}
 var direction_walk = {Vector2(0, -1): "walk_back", Vector2(0, 1): "walk_front", Vector2(-1, 0): "walk_side", Vector2(1, 0): "walk_side"}
 var move_target = null
+var is_employee = false
 
 func _ready():
 	var list_sprite_names = ["taser", "idle"]
@@ -111,5 +112,6 @@ func _shade_out():
 func is_player():
 	false
 
-func listen():
-	print("I'm personnally listening")
+func listen(source, rep):
+	if source != $Speaker:
+		print("I'm personnally listening")
