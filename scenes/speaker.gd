@@ -21,6 +21,7 @@ func _process(delta):
 	pass
 
 func _on_speak(rep, native=false):
+	print("blablabla")
 	var words = ""
 	
 	for n in rep:
@@ -43,4 +44,5 @@ func _on_speak(rep, native=false):
 	get_node("..").add_child(bubble)
 	
 	for node in $SpeakArea.get_overlapping_bodies():
-		node.listen(self, rep)
+		if node.is_employee != get_node("..").is_employee:
+			node.listen(self, rep)

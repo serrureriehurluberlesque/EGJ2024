@@ -3,7 +3,7 @@ extends Node2D
 @export var PEOPLE_BEFORE_JOUEUR = 3
 
 var t = 0
-var t_next = 0.7
+var t_next = 1.5
 var spawning = true
 
 const scene_joueur = "res://scenes/joueur.tscn"
