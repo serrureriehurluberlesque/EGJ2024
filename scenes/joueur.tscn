@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d07rjgslghr1s" path="res://assets/Chara_idle.png" id="2_cjfhx"]
 
 [node name="Joueur" instance=ExtResource("1_o2ysa")]
+SPEED = 80.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_cjfhx")

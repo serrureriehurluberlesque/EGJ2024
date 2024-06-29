@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/IA.gd" id="2_dqi8n"]
 
 [node name="Extra" instance=ExtResource("1_oxx4v")]
-SPEED = 15.0
+SPEED = 60.0
 
 [node name="IA" type="Node" parent="." index="1"]
 script = ExtResource("2_dqi8n")
