@@ -6,3 +6,14 @@
 [node name="Level1" instance=ExtResource("1_l3od6")]
 
 [node name="Terrain" parent="Center/Salle/SubViewportContainer/SubViewport" index="0" instance=ExtResource("2_bht8t")]
+
+[node name="ShowGoTimer" type="Timer" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="11"]
+wait_time = 2.0
+one_shot = true
+
+[node name="InitTimer" type="Timer" parent="Center/Salle/SubViewportContainer/SubViewport/Terrain" index="12"]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Center/Salle/SubViewportContainer/SubViewport/Terrain/ShowGoTimer" to="Center/Salle/SubViewportContainer/SubViewport/Terrain" method="_on_show_go_timer_timeout"]
+[connection signal="timeout" from="Center/Salle/SubViewportContainer/SubViewport/Terrain/InitTimer" to="Center/Salle/SubViewportContainer/SubViewport/Terrain" method="_on_init_timer_timeout"]
