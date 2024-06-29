@@ -11,4 +11,4 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
-	body.get_node("..").shade_out()
+	body.shade_out()

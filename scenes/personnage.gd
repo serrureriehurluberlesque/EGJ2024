@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 class_name Personnage
 
 @export var SPEED = 100.0
@@ -33,6 +33,9 @@ func _ready():
 	animate_move()
 
 func _process(delta):
+	pass
+	
+func _physics_process(delta):
 	t += delta
 	
 	_pre_move()
@@ -61,7 +64,7 @@ func _process(delta):
 	
 	if $ShadeOutTimer.time_left > 0:
 		modulate.a = sin($ShadeOutTimer.time_left * (PI / 2) / $ShadeOutTimer.wait_time)
-
+	
 func _pre_move():
 	pass
 
@@ -84,7 +87,8 @@ func movable():
 
 func move(v, delta):
 	if can_move:
-		set_position(get_position() + delta * SPEED * v)
+		# set_position(get_position() + delta * SPEED * v)
+		apply_central_force(SPEED * 10 * v)
 		moving = v
 
 func move_to(pos):
