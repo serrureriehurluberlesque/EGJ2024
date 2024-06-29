@@ -6,3 +6,7 @@ func _process(delta):
 	for d in directions:
 		if Input.is_action_pressed("move_" + d):
 			get_node("..").move(directions[d], delta)
+	
+	for i in 3:
+		if Input.is_action_just_pressed("speak_" + str(i + 1)):
+			get_node("../Speaker").speak.emit(i + 1, false)
