@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://diar0tgb5r0j5"]
+[gd_scene load_steps=6 format=3 uid="uid://diar0tgb5r0j5"]
 
 [ext_resource type="Texture2D" uid="uid://b4hktupohnf7o" path="res://assets/Tableau1.png" id="1_48t2d"]
+[ext_resource type="Script" path="res://scenes/terrain.gd" id="2_60x4u"]
 [ext_resource type="PackedScene" uid="uid://b00twpjkqplwd" path="res://scenes/foule.tscn" id="2_m5kla"]
 [ext_resource type="PackedScene" uid="uid://bdwx1mqql5tcu" path="res://scenes/garde.tscn" id="3_tf1qb"]
 [ext_resource type="PackedScene" uid="uid://b1t4pog2dnx58" path="res://scenes/porte.tscn" id="4_4eg23"]
@@ -9,6 +10,7 @@
 texture_filter = 1
 position = Vector2(176, 128)
 texture = ExtResource("1_48t2d")
+script = ExtResource("2_60x4u")
 
 [node name="Foule" parent="." instance=ExtResource("2_m5kla")]
 position = Vector2(32, 128)

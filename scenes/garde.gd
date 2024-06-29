@@ -15,6 +15,7 @@ func _post_move():
 		$Sprite2D.texture = sprites["taser"][n]
 
 func start_pre_tase():
+	# se_venere()
 	pre_tasing = true
 	j.not_movable()
 	move_to(j.get_global_position() + Vector2(24, 0))

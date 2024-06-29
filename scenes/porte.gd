@@ -11,7 +11,16 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
+	if body.is_player():
+		if get_node("..").isokpourpasser():
+			get_node("/root/Main").next_level()
+			remove_body(body)
+		else:
+			return
+	else:
+		remove_body(body)
+		
+
+func remove_body(body):
 	body.not_movable()
 	body.shade_out()
-	if body.is_player():
-		get_node("/root/Main").next_level()
