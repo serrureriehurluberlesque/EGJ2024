@@ -19,9 +19,6 @@ size = Vector2(465.5, 36)
 [node name="Terrain" instance=ExtResource("1_757ke")]
 script = ExtResource("2_02hv0")
 
-[node name="Garde" parent="." index="1"]
-timeout = 60.0
-
 [node name="Employee" parent="." index="4" instance=ExtResource("2_isnmc")]
 position = Vector2(60, -16)
 emp_type = 1
