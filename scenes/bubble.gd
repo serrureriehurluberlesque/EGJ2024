@@ -21,9 +21,17 @@ func float_array_to_Vector2Array(coords : Array) -> PackedVector2Array:
 	for coord in coords:
 		var vec = Vector2(coord[0], coord[1])
 		
+		#get_node("../Text").position.y -= 0.5 * n # oui c'est moche...
+		# ENCORE PLUS MOCHE
+		if n == 1:
+			get_node("../Text").position.y += 0.25
+		elif n == 2:
+			get_node("../Text").position.y -= 0.65
+		elif n == 3:
+			get_node("../Text").position.y -= 1.35
+		
 		# Scale bubble
 		if n >= 2:
-			get_node("../Text").position.y -= (n - 1)  # oui c'est moche...
 			if vec.y == 1.0:
 				vec.y -= 0.5 * (n - 1)
 			elif vec.y < 1.0:
