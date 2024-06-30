@@ -38,7 +38,11 @@ func _on_speak(rep, native=false, venere=false):
 	var bubble = bubble_scene.instantiate()
 	#bubble.get_node("Text").text = POSSIBLE_SPEECH[randi() % POSSIBLE_SPEECH.size()]
 	bubble.get_node("Text").text = words
+	
 	bubble.position = Vector2(0, - (get_node("../Sprite2D").texture.get_height() + bubble.size.y + 3))
+	if get_node("..").is_employee:
+		bubble.position.y += 20
+		
 	if venere:
 		bubble.get_node("Bubble").modulate = Color(1.0, 0.0, 0.0)
 	
