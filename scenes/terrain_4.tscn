@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfmlqp21ya4n5"]
+[gd_scene load_steps=7 format=3 uid="uid://dln06wfvcnp4h"]
 
 [ext_resource type="PackedScene" uid="uid://diar0tgb5r0j5" path="res://scenes/terrain.tscn" id="1_fmim7"]
 [ext_resource type="Texture2D" uid="uid://bt3ujquqt641v" path="res://assets/Tableau4.png" id="2_6egnl"]
@@ -43,4 +43,4 @@ t_next = 7.5
 position = Vector2(118, 75)
 
 [node name="Porte" parent="." index="5"]
-position = Vector2(124, -100)
+position = Vector2(124, -102)

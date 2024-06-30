@@ -13,6 +13,9 @@ script = ExtResource("2_02hv0")
 [node name="Foule" parent="." index="0"]
 t_next = 4.5
 
+[node name="Porte" parent="." index="2"]
+position = Vector2(9, -53)
+
 [node name="Employee" parent="." index="4" instance=ExtResource("2_isnmc")]
 position = Vector2(60, -16)
 emp_type = 1
