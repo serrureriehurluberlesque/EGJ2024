@@ -6,11 +6,11 @@ signal speak
 #var POSSIBLE_SPEECH = ["gŧœng", "Gong gong", "Gong gong gong", "gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong "]
 var SOUP_LETTERS = [
 	['$', '§', 'Š', 'Ƨ', 'Ș', 'Σ', '₴', 'ȿ', 'σ', 'ṩ'],
-	['Ǭ', 'Ǿ', 'ʘ', 'Ѻ', 'Ӫ', 'Ỡ', 'ỗ', 'ᾯ', '☺️', '☠️'],
+	#['Ǭ', 'Ǿ', 'ʘ', 'Ѻ', 'Ӫ', 'Ỡ', 'ỗ', 'ᾯ', '☺️', '☠️'],
+	['Ǭ', 'Ǿ', 'ʘ', 'Ѻ', 'Ӫ', 'Ỡ', 'ỗ'],
 	['Ŭ', 'Ů', 'Ű', 'Ų', 'Ǜ', 'Џ', 'Ṻ', 'Ứ', 'ῧ', 'ﬠ', 'ʋ'],
 	['Ƥ', 'ϥ', 'Ҏ', 'ᵽ', 'Ṕ', 'Ṗ', 'ῤ', 'Ῥ', '₱', 'Ᵽ'],
 ]
-var POSSIBLE_SPEECH = ["gŧœng", "Gong gong", "Gong gong gong", "gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong "]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
