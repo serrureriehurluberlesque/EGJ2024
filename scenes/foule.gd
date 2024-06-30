@@ -45,6 +45,11 @@ func _process(delta):
 			next()
 			t -= t_next
 			expected_jpos = Vector2(extras.size() * 32, 0)
+		elif not watched and t > 2 * t_next / 3:
+			var root = get_node("/root/Main")
+			if root.level_number == 1:
+				root.get_node("Level1/Center/Salle/SubViewportContainer/SubViewport/Terrain").show_go()
+			
 	if t_avance > 0:
 		t_avance -= delta
 		var SPEED = 40
@@ -67,10 +72,6 @@ func next():
 
 	elif not extras:
 		watched = false
-		var root = get_node("/root/Main")
-		if root.level_number == 1:
-			root.get_node("Level1/Center/Salle/SubViewportContainer/SubViewport/Terrain").show_go()
-
 	
 	suivant.movable()
 	if suivant != joueur:
