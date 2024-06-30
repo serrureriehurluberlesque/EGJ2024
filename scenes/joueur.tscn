@@ -14,7 +14,7 @@ script = ExtResource("2_6uerq")
 script = ExtResource("2_2keg3")
 
 [node name="Voice" parent="Speaker" index="1"]
-volume_db = 15.0
+volume_db = 10.0
 
 [node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(1.5, -16)

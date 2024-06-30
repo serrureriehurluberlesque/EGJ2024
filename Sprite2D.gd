@@ -18,7 +18,7 @@ func _process(delta):
 	t += delta
 	if t > 1.0:
 		if togglage:
-			texture = sprites[int(t * 3) % 2]
+			texture = sprites[int(t * 1) % 2]
 
 		if not nexted and Input.is_action_pressed("next"):
 			nexted = true
