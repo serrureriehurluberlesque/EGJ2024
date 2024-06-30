@@ -15,8 +15,7 @@ script = ExtResource("3_ninnf")
 
 [node name="Employee2" parent="." index="0" instance=ExtResource("5_tr0jy")]
 position = Vector2(37, -57)
-emp_type = 1
-is_plus = true
+emp_type = 3
 
 [node name="Employee" parent="." index="1" instance=ExtResource("5_tr0jy")]
 position = Vector2(-47, -57)

@@ -9,6 +9,7 @@ var voices = []
 
 var can_move = true
 var t = 0
+var t2 = 0
 var moving = false
 var sprites = {}
 var direction_walk = {Vector2(0, -1): "walk_back", Vector2(0, 1): "walk_front", Vector2(-1, 0): "walk_side", Vector2(1, 0): "walk_side"}
@@ -47,6 +48,7 @@ func _process(delta):
 func _physics_process(delta):
 	if can_move:
 		t += delta
+	t2 += delta
 	
 	_pre_move()
 	
@@ -84,13 +86,13 @@ func _post_move():
 func animate_move(d=Vector2(0, 0)):
 	if not is_ko:
 		if d and sprites[direction_walk[d]]:
-			$Sprite2D.texture = sprites[direction_walk[d]][int(t * 6) % len(sprites[direction_walk[d]])]
+			$Sprite2D.texture = sprites[direction_walk[d]][int(t2 * 6) % len(sprites[direction_walk[d]])]
 			if d == Vector2(1, 0):
 				$Sprite2D.flip_h = true
 			else:
 				$Sprite2D.flip_h = false
 		elif not turned_back:
-			$Sprite2D.texture = sprites["idle"][int(t * 6) % len(sprites["idle"])]
+			$Sprite2D.texture = sprites["idle"][int(t2 * 6) % len(sprites["idle"])]
 
 func not_movable():
 	can_move = false

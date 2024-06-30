@@ -40,5 +40,16 @@ func fast_next_level():
 func load_next_level():
 	if level:
 		level.free()
+		
+	if level_number >= 2 and level_number <= 5:
+		$Inside.play()
+	else:
+		$Inside.stop()
+	
+	if level_number == 1:
+		$Outside.play()
+	else:
+		$Outside.stop()
+		
 	level = load(get_current_level()).instantiate()
 	add_child(level)

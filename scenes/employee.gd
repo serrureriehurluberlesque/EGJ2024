@@ -34,11 +34,6 @@ func _on_area_2d_body_entered(body):
 			waiting_for_answer = true
 		if emp_type == 1:
 			var delta = 0
-			if is_plus:
-				if randomed > 0.5:
-					delta = 1
-				else:
-					delta = -1
 			
 			var rep = randi() % 3 + 1
 			if rep + delta > 3:
@@ -70,7 +65,22 @@ func _on_area_2d_body_entered(body):
 				await get_tree().create_timer(1.5).timeout
 				$Speaker.speak.emit(rep[1], true)
 		else:
-			pass
+			var delta = 0
+			if randomed > 0.5:
+				delta = 1
+			else:
+				delta = -1
+			
+			var rep = randi() % 3 + 1
+			if rep + delta > 3:
+				rep -= 1
+			if rep + delta < 1:
+				rep += 1
+			
+			expected_response = rep + delta
+				
+			$Speaker.speak.emit(rep, true)
+			$ValidationTimer.start()
 
 func listen(source, rep):
 	var node = source.get_node("..")

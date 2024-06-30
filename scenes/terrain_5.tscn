@@ -15,13 +15,11 @@ script = ExtResource("3_vd8ac")
 
 [node name="Employee" parent="." index="0" instance=ExtResource("3_jwcjt")]
 position = Vector2(48, -42)
-emp_type = 1
-is_plus = true
+emp_type = 3
 
 [node name="Employee3" parent="." index="1" instance=ExtResource("3_jwcjt")]
 position = Vector2(-39, -42)
-emp_type = 1
-is_plus = true
+emp_type = 3
 
 [node name="Employee4" parent="." index="2" instance=ExtResource("3_jwcjt")]
 position = Vector2(-129, 89)
