@@ -38,5 +38,5 @@ func _process(delta):
 		tab[randi() % x][randi() % y].get_node("Speaker").speak.emit(randi() % 3 + 1, true)
 		
 	if t > timeout and not ended:
-		print("ending")
+		get_node("/root/Main").fast_next_level()
 		ended = true

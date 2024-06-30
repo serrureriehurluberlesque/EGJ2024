@@ -2,16 +2,19 @@ extends Control
 
 var level
 
-var level_number = 1
+var level_number = 7
+var to_next = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	load_next_level()
+	load_next_level() 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if to_next:
+		to_next = false
+		load_next_level()
 
 func door_sound():
 	$DoorSound.play()
@@ -32,7 +35,7 @@ func get_current_level():
 
 func fast_next_level():
 	level_number += 1
-	load_next_level()
+	to_next = true
 
 func load_next_level():
 	if level:
