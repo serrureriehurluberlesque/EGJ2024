@@ -64,12 +64,15 @@ func next():
 	if not suivant:
 		suivant = joueur
 		spawning = false
-	
-	suivant.movable()
-	if suivant != joueur:
-		t_avance = 0.82
-	else:
+
+	elif not extras:
 		watched = false
 		var root = get_node("/root/Main")
 		if root.level_number == 1:
 			root.get_node("Level1/Center/Salle/SubViewportContainer/SubViewport/Terrain").show_go()
+
+	
+	suivant.movable()
+	if suivant != joueur:
+		t_avance = 0.82
+		
