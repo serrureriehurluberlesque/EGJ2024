@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://diar0tgb5r0j5"]
+[gd_scene load_steps=9 format=3 uid="uid://diar0tgb5r0j5"]
 
 [ext_resource type="Texture2D" uid="uid://b4hktupohnf7o" path="res://assets/Tableau1.png" id="1_48t2d"]
 [ext_resource type="Script" path="res://scenes/terrain.gd" id="2_60x4u"]
 [ext_resource type="PackedScene" uid="uid://b00twpjkqplwd" path="res://scenes/foule.tscn" id="2_m5kla"]
 [ext_resource type="PackedScene" uid="uid://bdwx1mqql5tcu" path="res://scenes/garde.tscn" id="3_tf1qb"]
 [ext_resource type="PackedScene" uid="uid://b1t4pog2dnx58" path="res://scenes/porte.tscn" id="4_4eg23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njha5"]
+size = Vector2(56, 253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_508o6"]
+size = Vector2(465.5, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufi24"]
+size = Vector2(352, 65)
 
 [node name="Terrain" type="Sprite2D"]
 texture_filter = 1
@@ -25,3 +34,33 @@ position = Vector2(10, -53)
 position = Vector2(-176, -128)
 offset = Vector2(176, 128)
 process_callback = 0
+
+[node name="BorderRight" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="BorderRightShape" type="CollisionShape2D" parent="BorderRight"]
+position = Vector2(204, 1)
+shape = SubResource("RectangleShape2D_njha5")
+
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="BorderLeftShape" type="CollisionShape2D" parent="BorderLeft"]
+position = Vector2(-204, 0)
+shape = SubResource("RectangleShape2D_njha5")
+
+[node name="BorderBottom" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="BorderBottomShape" type="CollisionShape2D" parent="BorderBottom"]
+position = Vector2(-0.75, 146)
+shape = SubResource("RectangleShape2D_508o6")
+
+[node name="Sky" type="StaticBody2D" parent="."]
+position = Vector2(0, -58)
+collision_layer = 8
+collision_mask = 2
+
+[node name="SkyShape" type="CollisionShape2D" parent="Sky"]
+position = Vector2(0, -96.5)
+shape = SubResource("RectangleShape2D_ufi24")
