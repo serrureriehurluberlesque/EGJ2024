@@ -18,6 +18,7 @@ var todos = []
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
+	t = t_next - 3.5
 	todos = get_node("..").get_todos()
 	var n = PEOPLE_BEFORE_JOUEUR + 1
 	$Sol.set_position(Vector2(32 * n, -16))
