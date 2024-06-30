@@ -51,13 +51,24 @@ func _on_area_2d_body_entered(body):
 			$Speaker.speak.emit(rep, true)
 			$ValidationTimer.start()
 		elif emp_type == 2:
-			var rep = [randi() % 3 + 1, randi() % 3 + 1]
-			expected_response = rep
-			$ValidationTimer.wait_time = 10
-			$ValidationTimer.start()
-			$Speaker.speak.emit(rep[0], true)
-			await get_tree().create_timer(1.5).timeout
-			$Speaker.speak.emit(rep[1], true)
+			if is_plus:
+				var rep = [randi() % 3 + 1, randi() % 3 + 1, randi() % 3 + 1]
+				expected_response = rep
+				$ValidationTimer.wait_time = 12
+				$ValidationTimer.start()
+				$Speaker.speak.emit(rep[0], true)
+				await get_tree().create_timer(1.1).timeout
+				$Speaker.speak.emit(rep[1], true)
+				await get_tree().create_timer(1.1).timeout
+				$Speaker.speak.emit(rep[2], true)
+			else:
+				var rep = [randi() % 3 + 1, randi() % 3 + 1]
+				expected_response = rep
+				$ValidationTimer.wait_time = 10
+				$ValidationTimer.start()
+				$Speaker.speak.emit(rep[0], true)
+				await get_tree().create_timer(1.5).timeout
+				$Speaker.speak.emit(rep[1], true)
 		else:
 			pass
 

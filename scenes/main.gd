@@ -2,7 +2,7 @@ extends Control
 
 var level
 
-var level_number = 7
+var level_number = 4
 var to_next = false
 
 # Called when the node enters the scene tree for the first time.

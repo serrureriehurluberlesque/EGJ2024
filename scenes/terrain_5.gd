@@ -7,6 +7,6 @@ func get_todos():
 		{"t": 2.9, "action": "move", "target": Vector2(120, 156)},
 		{"t": 6.0, "action": "move", "target": Vector2(80, 210)},
 		{"t": 7.0, "action": "move", "target": Vector2(70, 200)},
-		{"t": 12.7, "action": "move", "target": Vector2(50, 180)},
-		{"t": 13.1, "action": "move", "target": Vector2(50, 50)},
+		{"t": 13.7, "action": "move", "target": Vector2(50, 180)},
+		{"t": 14.1, "action": "move", "target": Vector2(50, 50)},
 		]

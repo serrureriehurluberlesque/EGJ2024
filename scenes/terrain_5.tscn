@@ -42,7 +42,7 @@ shape = SubResource("RectangleShape2D_orlkt")
 
 [node name="Foule" parent="." index="4"]
 position = Vector2(32, 104)
-t_next = 7.5
+t_next = 8.5
 
 [node name="Garde" parent="." index="5"]
 position = Vector2(135, -55)
