@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://diar0tgb5r0j5"]
 
-[ext_resource type="Texture2D" uid="uid://b4hktupohnf7o" path="res://assets/Tableau1.png" id="1_48t2d"]
+[ext_resource type="Texture2D" uid="uid://k37bm1xrg77q" path="res://assets/Tableau1.png" id="1_48t2d"]
 [ext_resource type="Script" path="res://scenes/terrain.gd" id="2_60x4u"]
 [ext_resource type="PackedScene" uid="uid://b00twpjkqplwd" path="res://scenes/foule.tscn" id="2_m5kla"]
 [ext_resource type="PackedScene" uid="uid://bdwx1mqql5tcu" path="res://scenes/garde.tscn" id="3_tf1qb"]

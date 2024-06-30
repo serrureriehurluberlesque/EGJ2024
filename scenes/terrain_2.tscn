@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://diar0tgb5r0j5" path="res://scenes/terrain.tscn" id="1_lq28u"]
 [ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="2_13vm6"]
-[ext_resource type="Texture2D" uid="uid://csfo0511i0k02" path="res://assets/Tableau2.png" id="2_we0tf"]
+[ext_resource type="Texture2D" uid="uid://jy6y55774vv7" path="res://assets/Tableau2.png" id="2_we0tf"]
 [ext_resource type="Script" path="res://scenes/terrain_2.gd" id="3_86h1u"]
-[ext_resource type="Texture2D" uid="uid://buprg8wkis4sf" path="res://assets/desk.png" id="4_cl74m"]
+[ext_resource type="Texture2D" uid="uid://1d5lv0cfnkae" path="res://assets/desk.png" id="4_cl74m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_euhft"]
 size = Vector2(183, 12)

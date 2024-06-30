@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://yjt2tggvmvm6"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_w67ax"]
-[ext_resource type="AudioStream" uid="uid://dxxqjy525srmf" path="res://assets/door.wav" id="2_r4bks"]
-[ext_resource type="AudioStream" uid="uid://bi4o6d4g4ta7w" path="res://assets/gun.wav" id="3_naygc"]
-[ext_resource type="AudioStream" uid="uid://cjo1venyri0qk" path="res://assets/music.ogg" id="4_8kkst"]
+[ext_resource type="AudioStream" uid="uid://rqsh02a5valm" path="res://assets/door.wav" id="2_r4bks"]
+[ext_resource type="AudioStream" uid="uid://c0g7ef6gmjvrp" path="res://assets/gun.wav" id="3_naygc"]
+[ext_resource type="AudioStream" uid="uid://53k7vc20miru" path="res://assets/music.ogg" id="4_8kkst"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
