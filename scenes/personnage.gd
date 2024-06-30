@@ -35,7 +35,7 @@ func _ready():
 			var p = "res://assets/" + sprite_name + "_" + lsn + "_" + str(i + 1) + ".png"
 			if ResourceLoader.exists(p):
 				sprites[lsn].append(load(p))
-				
+	
 	animate_move()
 
 func _pre_ready():
