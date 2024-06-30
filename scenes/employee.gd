@@ -63,7 +63,6 @@ func _on_area_2d_body_entered(body):
 
 func listen(source, rep):
 	var node = source.get_node("..")
-	print(node, rep)
 	if node.is_player():
 		if typeof(expected_response) == TYPE_INT:
 			if rep != expected_response: # TODO pas forcément identité

@@ -30,7 +30,6 @@ func _on_think_timer_timeout():
 	if typeof(expected_answer) == TYPE_INT:
 		get_node("../Speaker").speak.emit(expected_answer, true)
 	else:
-		print(expected_answer)
 		for e in expected_answer:
 			get_node("../Speaker").speak.emit(e, true)
 			await get_tree().create_timer(1.5).timeout
