@@ -17,6 +17,9 @@ texture = ExtResource("2_cjfhx")
 [node name="Controle" type="Node" parent="." index="1"]
 script = ExtResource("2_2keg3")
 
+[node name="Voice" parent="Speaker" index="1"]
+volume_db = 24.0
+
 [node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(1.5, -16)
 shape = SubResource("RectangleShape2D_kuqep")
@@ -25,3 +28,5 @@ shape = SubResource("RectangleShape2D_kuqep")
 one_shot = true
 
 [connection signal="timeout" from="KnockOutTimer" to="." method="_on_knock_out_timer_timeout"]
+
+[editable path="Speaker"]
