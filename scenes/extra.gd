@@ -20,4 +20,5 @@ func _shade_out():
 
 func listen(source, rep):
 	if source != $Speaker:
+		super(source, rep)
 		$IA.think_and_answer(source, rep)

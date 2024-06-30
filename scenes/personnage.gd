@@ -133,4 +133,4 @@ func is_player():
 	false
 
 func listen(source, rep):
-	pass
+	$Speaker.use_track = source.last_track_used
