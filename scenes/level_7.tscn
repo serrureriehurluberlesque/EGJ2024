@@ -10,4 +10,5 @@
 position = Vector2(176, 128)
 texture = ExtResource("2_xolho")
 script = ExtResource("3_4oqdw")
+togglage = true
 loop = true
