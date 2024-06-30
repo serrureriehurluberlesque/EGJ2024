@@ -11,6 +11,10 @@ var SOUP_LETTERS = [
 	['Ŭ', 'Ů', 'Ű', 'Ų', 'Ǜ', 'Џ', 'Ṻ', 'Ứ', 'ῧ', 'ﬠ', 'ʋ'],
 	['Ƥ', 'ϥ', 'Ҏ', 'ᵽ', 'Ṕ', 'Ṗ', 'ῤ', 'Ῥ', '₱', 'Ᵽ'],
 ]
+
+var last_track_used = -1
+var use_track = -1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -48,7 +52,16 @@ func _on_speak(rep, native=false, venere=false):
 	
 	get_node("..").add_child(bubble)
 	if "voices" in get_node("..") and len(get_node("..").voices) > 0:
-		$Voice.stream = get_node("..").voices[randi() % len(get_node("..").voices)]
+
+		var speak_track
+		if use_track >= 0:
+			speak_track = use_track
+			use_track = -1
+		else:
+			speak_track = randi() % len(get_node("..").voices)
+			last_track_used = speak_track
+			
+		$Voice.stream = get_node("..").voices[speak_track]
 		$Voice.play()
 	
 	for node in $SpeakArea.get_overlapping_bodies():
