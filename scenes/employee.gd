@@ -4,6 +4,7 @@ extends StaticBody2D
 @export var is_plus: bool
 @onready var randomed = randi() % 2
 var expected_response = 0
+var waiting_for_answer = false
 var given_response = []
 
 var is_employee = true
@@ -28,34 +29,37 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_entered(body):
-	if emp_type == 1:
-		var delta = 0
-		if is_plus:
-			if randomed > 0.5:
-				delta = 1
-			else:
-				delta = -1
-		
-		var rep = randi() % 3 + 1
-		if rep + delta > 3:
-			rep -= 1
-		if rep + delta < 1:
-			rep += 1
-		
-		expected_response = rep + delta
+	if waiting_for_answer == false:
+		if body.is_player():
+			waiting_for_answer = true
+		if emp_type == 1:
+			var delta = 0
+			if is_plus:
+				if randomed > 0.5:
+					delta = 1
+				else:
+					delta = -1
 			
-		$Speaker.speak.emit(rep, true)
-		$ValidationTimer.start()
-	elif emp_type == 2:
-		var rep = [randi() % 3 + 1, randi() % 3 + 1]
-		expected_response = rep
-		$ValidationTimer.wait_time = 10
-		$ValidationTimer.start()
-		$Speaker.speak.emit(rep[0], true)
-		await get_tree().create_timer(1.5).timeout
-		$Speaker.speak.emit(rep[1], true)
-	else:
-		pass
+			var rep = randi() % 3 + 1
+			if rep + delta > 3:
+				rep -= 1
+			if rep + delta < 1:
+				rep += 1
+			
+			expected_response = rep + delta
+				
+			$Speaker.speak.emit(rep, true)
+			$ValidationTimer.start()
+		elif emp_type == 2:
+			var rep = [randi() % 3 + 1, randi() % 3 + 1]
+			expected_response = rep
+			$ValidationTimer.wait_time = 10
+			$ValidationTimer.start()
+			$Speaker.speak.emit(rep[0], true)
+			await get_tree().create_timer(1.5).timeout
+			$Speaker.speak.emit(rep[1], true)
+		else:
+			pass
 
 func listen(source, rep):
 	var node = source.get_node("..")
@@ -65,9 +69,11 @@ func listen(source, rep):
 			if rep != expected_response: # TODO pas forcément identité
 				print("WRONG (%d != %d)" % [rep, expected_response])
 				get_node("..").osekour()
+				se_venere()
 			else:
 				print("CORRECT")
 				expected_response = 0
+				waiting_for_answer = false
 				is_content = true
 		else:
 			given_response.append(rep)
@@ -75,10 +81,12 @@ func listen(source, rep):
 				if given_response != expected_response: # TODO pas forcément identité
 					print("WRONG (%d != %d)" % [given_response, expected_response])
 					get_node("..").osekour()
+					se_venere()
 					given_response = []
 				else:
 					print("CORRECT")
 					expected_response = 0
+					waiting_for_answer = false
 					given_response = []
 					is_content = true
 
@@ -86,8 +94,8 @@ func listen(source, rep):
 
 func _on_validation_timer_timeout():
 	print("WRONG (timer timeout!)")
-	expected_response = 0
 	get_node("..").osekour()
+	se_venere()
 	
 func se_venere():
 	$Speaker.speak.emit(randi() % 3 + 1, true, true)
