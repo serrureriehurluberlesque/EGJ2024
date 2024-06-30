@@ -22,5 +22,3 @@ func _on_speech_timer_timeout():
 func _on_fade_out_timer_timeout():
 	hide()
 	queue_free()
-
-
