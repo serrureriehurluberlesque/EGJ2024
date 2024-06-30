@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbnmf3c4e7aww"]
+
+[ext_resource type="PackedScene" uid="uid://diar0tgb5r0j5" path="res://scenes/terrain.tscn" id="1_durc6"]
+[ext_resource type="Script" path="res://scenes/terrain_6.gd" id="2_eo1en"]
+[ext_resource type="Texture2D" uid="uid://d3tvywick5dy6" path="res://assets/Tableau7.png" id="2_kkah4"]
+[ext_resource type="PackedScene" uid="uid://bt2brvj5wju04" path="res://scenes/joueur.tscn" id="4_y7h3y"]
+
+[node name="Terrain" instance=ExtResource("1_durc6")]
+texture = ExtResource("2_kkah4")
+script = ExtResource("2_eo1en")
+
+[node name="Joueur" parent="." index="8" instance=ExtResource("4_y7h3y")]
+position = Vector2(88, 125)

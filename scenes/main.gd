@@ -29,7 +29,11 @@ func _on_next_level_timer_timeout():
 	
 func get_current_level():
 	return "res://scenes/level_%d.tscn" % level_number
-	
+
+func fast_next_level():
+	level_number += 1
+	load_next_level()
+
 func load_next_level():
 	if level:
 		level.free()

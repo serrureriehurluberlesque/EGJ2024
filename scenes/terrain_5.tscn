@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsgpqe0wv6ytr"]
+
+[ext_resource type="PackedScene" uid="uid://diar0tgb5r0j5" path="res://scenes/terrain.tscn" id="1_25rcb"]
+[ext_resource type="Texture2D" uid="uid://c83fi54lanmuj" path="res://assets/Tableau5.png" id="2_n6jcg"]
+[ext_resource type="PackedScene" uid="uid://djma8w86dg1xk" path="res://scenes/employee.tscn" id="3_jwcjt"]
+[ext_resource type="Script" path="res://scenes/terrain_5.gd" id="3_vd8ac"]
+[ext_resource type="Texture2D" uid="uid://1d5lv0cfnkae" path="res://assets/desk.png" id="4_c58xi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orlkt"]
+size = Vector2(183, 12)
+
+[node name="Terrain" instance=ExtResource("1_25rcb")]
+texture = ExtResource("2_n6jcg")
+script = ExtResource("3_vd8ac")
+
+[node name="Employee" parent="." index="0" instance=ExtResource("3_jwcjt")]
+position = Vector2(48, -42)
+emp_type = 1
+is_plus = true
+
+[node name="Employee3" parent="." index="1" instance=ExtResource("3_jwcjt")]
+position = Vector2(-39, -42)
+emp_type = 1
+is_plus = true
+
+[node name="Employee4" parent="." index="2" instance=ExtResource("3_jwcjt")]
+position = Vector2(-129, 89)
+emp_type = 2
+is_plus = true
+
+[node name="Desk" type="StaticBody2D" parent="." index="3"]
+collision_layer = 8
+collision_mask = 3
+
+[node name="DeskSprite" type="Sprite2D" parent="Desk" index="0"]
+z_index = 1
+texture = ExtResource("4_c58xi")
+
+[node name="DeskShape" type="CollisionShape2D" parent="Desk" index="1"]
+position = Vector2(13, -20)
+shape = SubResource("RectangleShape2D_orlkt")
+
+[node name="Foule" parent="." index="4"]
+position = Vector2(32, 104)
+t_next = 7.5
+
+[node name="Garde" parent="." index="5"]
+position = Vector2(135, -55)
+
+[node name="Porte" parent="." index="6"]
+position = Vector2(-130, -99)

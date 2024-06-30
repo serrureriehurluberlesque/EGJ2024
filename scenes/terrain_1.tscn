@@ -10,6 +10,9 @@ size = Vector2(82, 100)
 [node name="Terrain" instance=ExtResource("1_757ke")]
 script = ExtResource("2_02hv0")
 
+[node name="Foule" parent="." index="0"]
+t_next = 4.5
+
 [node name="Employee" parent="." index="4" instance=ExtResource("2_isnmc")]
 position = Vector2(60, -16)
 emp_type = 1

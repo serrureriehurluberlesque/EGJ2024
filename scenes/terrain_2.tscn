@@ -13,37 +13,37 @@ size = Vector2(183, 12)
 texture = ExtResource("2_we0tf")
 script = ExtResource("3_86h1u")
 
-[node name="Foule" parent="." index="0"]
-position = Vector2(16, 104)
-t_next = 7.5
-
-[node name="Garde" parent="." index="1"]
-position = Vector2(142, 32)
-timeout = 90.0
-
-[node name="Porte" parent="." index="2"]
-position = Vector2(-130, -101)
-
-[node name="Employee" parent="." index="4" instance=ExtResource("2_13vm6")]
+[node name="Employee" parent="." index="0" instance=ExtResource("2_13vm6")]
 position = Vector2(48, -42)
 emp_type = 1
 
-[node name="Employee3" parent="." index="5" instance=ExtResource("2_13vm6")]
+[node name="Employee3" parent="." index="1" instance=ExtResource("2_13vm6")]
 position = Vector2(-39, -42)
 emp_type = 1
-is_plus = true
 
-[node name="Employee4" parent="." index="6" instance=ExtResource("2_13vm6")]
+[node name="Employee4" parent="." index="2" instance=ExtResource("2_13vm6")]
 position = Vector2(-129, 89)
 emp_type = 2
 
-[node name="Desk" type="StaticBody2D" parent="." index="7"]
+[node name="Desk" type="StaticBody2D" parent="." index="3"]
 collision_layer = 8
 collision_mask = 3
 
 [node name="DeskSprite" type="Sprite2D" parent="Desk" index="0"]
+z_index = 1
 texture = ExtResource("4_cl74m")
 
 [node name="DeskShape" type="CollisionShape2D" parent="Desk" index="1"]
 position = Vector2(13, -20)
 shape = SubResource("RectangleShape2D_euhft")
+
+[node name="Foule" parent="." index="4"]
+position = Vector2(16, 104)
+t_next = 7.5
+
+[node name="Garde" parent="." index="5"]
+position = Vector2(142, 32)
+timeout = 90.0
+
+[node name="Porte" parent="." index="6"]
+position = Vector2(-130, -101)

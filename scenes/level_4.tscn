@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://6a1ug2kw6eji"]
+
+[ext_resource type="PackedScene" uid="uid://c23bpyvvlxhsx" path="res://scenes/level.tscn" id="1_kkkqb"]
+[ext_resource type="PackedScene" uid="uid://bfmlqp21ya4n5" path="res://scenes/terrain_4.tscn" id="2_yxg1v"]
+
+[node name="Level4" instance=ExtResource("1_kkkqb")]
+
+[node name="Terrain" parent="Center/Salle/SubViewportContainer/SubViewport" index="0" instance=ExtResource("2_yxg1v")]
