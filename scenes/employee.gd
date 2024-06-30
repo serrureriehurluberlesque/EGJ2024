@@ -66,11 +66,11 @@ func listen(source, rep):
 	if node.is_player():
 		if typeof(expected_response) == TYPE_INT:
 			if rep != expected_response: # TODO pas forcément identité
-				print("WRONG (%d != %d)" % [rep, expected_response])
+				#print("WRONG (%d != %d)" % [rep, expected_response])
 				get_node("..").osekour()
 				se_venere()
 			else:
-				print("CORRECT")
+				#print("CORRECT")
 				expected_response = 0
 				waiting_for_answer = false
 				is_content = true
@@ -78,12 +78,12 @@ func listen(source, rep):
 			given_response.append(rep)
 			if len(given_response) == len(expected_response):
 				if given_response != expected_response: # TODO pas forcément identité
-					print("WRONG (%d != %d)" % [given_response, expected_response])
+					#print("WRONG (%d != %d)" % [given_response, expected_response])
 					get_node("..").osekour()
 					se_venere()
 					given_response = []
 				else:
-					print("CORRECT")
+					#print("CORRECT")
 					expected_response = 0
 					waiting_for_answer = false
 					given_response = []
@@ -92,7 +92,7 @@ func listen(source, rep):
 	$ValidationTimer.stop()
 
 func _on_validation_timer_timeout():
-	print("WRONG (timer timeout!)")
+	#print("WRONG (timer timeout!)")
 	get_node("..").osekour()
 	se_venere()
 	

@@ -12,7 +12,11 @@ func _process(delta):
 		modulate.a = sin($FadeOutTimer.time_left * (PI / 2) / $FadeOutTimer.wait_time)
 
 func _on_fade_in_timer_timeout():
-	var var_time = 0.6 + $Text.text.length() * 0.04 # TODO adapter
+	var var_time = 0.7 + $Text.text.length() * 0.04 # TODO adapter
+	# Incoming worst code ever
+	var speaking_node = get_node("..")
+	if "is_player" in speaking_node and speaking_node.is_player():
+		var_time += 1
 	$SpeechTimer.wait_time = var_time
 	$SpeechTimer.start()
 
