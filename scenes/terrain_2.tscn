@@ -46,4 +46,4 @@ position = Vector2(142, 32)
 timeout = 90.0
 
 [node name="Porte" parent="." index="6"]
-position = Vector2(-130, -101)
+position = Vector2(-130, -102)

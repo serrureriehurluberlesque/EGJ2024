@@ -12,7 +12,12 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	await get_tree().create_timer(0.5).timeout
-	$Area2D/Sprite2D.texture = load("res://assets/door_open_1.png")
+	
+	if get_node("/root/Main").level_number == 1:
+		$Area2D/Sprite2D.texture = load("res://assets/door_open_1.png")
+		$Area2D/Sprite2D.position.x = -1
+	else:
+		$Area2D/Sprite2D.texture = load("res://assets/door_open_2.png")
 	$PorteOuverteTimer.start()
 
 	if body.is_player():

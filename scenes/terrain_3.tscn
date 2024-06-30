@@ -38,4 +38,4 @@ shape = SubResource("RectangleShape2D_2x0m5")
 position = Vector2(-32, 104)
 
 [node name="Porte" parent="." index="5"]
-position = Vector2(124, -100)
+position = Vector2(124, -102)

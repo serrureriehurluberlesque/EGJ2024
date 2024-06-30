@@ -46,4 +46,4 @@ t_next = 8.5
 position = Vector2(135, -55)
 
 [node name="Porte" parent="." index="6"]
-position = Vector2(-130, -99)
+position = Vector2(-130, -102)
