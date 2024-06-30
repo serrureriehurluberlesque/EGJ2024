@@ -5,11 +5,11 @@ signal speak
 
 #var POSSIBLE_SPEECH = ["gŧœng", "Gong gong", "Gong gong gong", "gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong gong "]
 var SOUP_LETTERS = [
-	['$', '§', 'Š', 'Ƨ', 'Ș', 'Σ', '₴', 'ȿ', 'σ', 'ṩ'],
+	['$', '§', 'Š', 'Ș', 'ṩ'],
 	#['Ǭ', 'Ǿ', 'ʘ', 'Ѻ', 'Ӫ', 'Ỡ', 'ỗ', 'ᾯ', '☺️', '☠️'],
-	['Ǭ', 'Ǿ', 'ʘ', 'Ѻ', 'Ӫ', 'Ỡ', 'ỗ'],
-	['Ŭ', 'Ů', 'Ű', 'Ų', 'Ǜ', 'Џ', 'Ṻ', 'Ứ', 'ῧ', 'ﬠ', 'ʋ'],
-	['Ƥ', 'ϥ', 'Ҏ', 'ᵽ', 'Ṕ', 'Ṗ', 'ῤ', 'Ῥ', '₱', 'Ᵽ'],
+	['Ǭ', 'Ǿ', 'Ỡ', 'ỗ'],
+	['Ŭ', 'Ů', 'Ű', 'Ų', 'Ǜ', 'Ṻ', 'Ứ'],
+	['Ṕ', 'P'],
 ]
 
 var last_track_used = -1
