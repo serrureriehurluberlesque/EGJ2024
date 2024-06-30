@@ -27,5 +27,8 @@ shape = SubResource("RectangleShape2D_oehox")
 [node name="Node2D" type="Node2D" parent="." index="6"]
 position = Vector2(17, -3)
 
+[node name="BorderBottomShape" parent="BorderBottom" index="0"]
+position = Vector2(-0.75, 146)
+
 [node name="Sky" parent="." index="10"]
 position = Vector2(0, 0)

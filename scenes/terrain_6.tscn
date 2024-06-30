@@ -10,4 +10,4 @@ texture = ExtResource("2_kkah4")
 script = ExtResource("2_eo1en")
 
 [node name="Joueur" parent="." index="8" instance=ExtResource("4_y7h3y")]
-position = Vector2(88, 125)
+position = Vector2(87, 107)

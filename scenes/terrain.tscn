@@ -53,7 +53,7 @@ shape = SubResource("RectangleShape2D_njha5")
 collision_layer = 8
 
 [node name="BorderBottomShape" type="CollisionShape2D" parent="BorderBottom"]
-position = Vector2(-0.75, 146)
+position = Vector2(-0.75, 126)
 shape = SubResource("RectangleShape2D_508o6")
 
 [node name="Sky" type="StaticBody2D" parent="."]
