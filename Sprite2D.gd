@@ -9,7 +9,7 @@ var t = 0
 var sprites = []
 
 func _ready():
-	for i in 4:
+	for i in 6:
 		var p = "res://assets/titlescreen_" + str(i) + ".png"
 		if ResourceLoader.exists(p):
 			sprites.append(load(p))
@@ -19,9 +19,11 @@ func _process(delta):
 	if t > 1.0:
 		if togglage:
 			var delt = 0
-			if not loop:
+			var m = 2
+			if not loop: # soucoupe
 				delt = 2
-			texture = sprites[(int(t * 1) % 2) + delt]
+				m = 4
+			texture = sprites[(int(t * m / 2) % m) + delt]
 
 		if not nexted and Input.is_action_pressed("next"):
 			nexted = true
