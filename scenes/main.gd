@@ -48,6 +48,7 @@ func load_next_level():
 	
 	if level_number == 1:
 		$Outside.play()
+		$Music.play()
 	else:
 		$Outside.stop()
 		
