@@ -6,7 +6,7 @@ func _pre_ready():
 	for i in 7:
 		voices.append(load("res://assets/sounds/voices/%s/%s.wav" % ["JOUEUR", i + 1]))
 
-func _physics_process(delta):
+func _process(delta):
 	if $KnockOutTimer.time_left > 0:
 		_blinking_time += delta
 		if _blinking_time > 0.2:
