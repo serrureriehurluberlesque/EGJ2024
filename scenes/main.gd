@@ -57,4 +57,4 @@ func load_next_level():
 
 
 func _on_music_finished():
-	await get_tree().create_timer(30.0).timeout
+	$Music.play()
